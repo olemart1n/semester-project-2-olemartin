@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://kit.fontawesome.com/91d90be639.js" crossorigin="anonymous"></script>
+    <!-- <link rel="stylesheet" href="./style.css"> -->
+    <title>Home | AuctionHouse</title>
+</head>
+
+<body class="bg-auctionBg relative">
+    <nav class="relative containers p-6 bg-almostWhite">
+        <div class="flex items-center justify-between flex-wrap ">
+            <a href="../index.html" id="back-arrow"><i class="fa-solid fa-arrow-left text-logoBg fa-lg"></i></a>
+            <div class="lg:p-2 mx-auto justify-center">
+                <a href="../index.html">
+                    <h1 class="bg-logoBg text-almostWhite font-light px-3 py-2 shrink">AuctionHouse</h1>
+                </a>
+            </div>
+        </div>
+    </nav>
+    <main class="flex items-center  justify-center py-12 px-4 sm:px-6 lg:px-8 ">
+        <div class="mx-auto w-full mt-15  md:mx-auto md:w-1/2">
+            <form action="" method="post" class="mt-8 space-y-6 flex flex-col justify-center" id="authenticateForms">
+                <div id="div-with-name">
+                    <input type="text" placeholder="name" name="name" id="name-input" pattern="^[\w]+$"
+                        title="uppercase, lowercase and (_) allowed"
+                        class="bg-logoBg relative block w-full appearance-none border border-auctionBlue px-3 py-2 focus:outline-auctionBrown">
+                </div>
+                <div class="space-y-px rounded-md shadow-sm">
+                    <input type="email" placeholder="email" name="email" id="email-input" aria-describedby="emailHelp"
+                        pattern="^[\w\-.]+@(stud.)?noroff.no$" title="use a @noroff.no mail-adress" required
+                        class="bg-logoBg relative block w-full appearance-none border border-auctionBlue px-3 py-2 focus:outline-auctionBrown">
+                </div>
+                <div>
+                    <input type="password" placeholder="password" name="password" id="password-input" minlength="8"
+                        required
+                        class="bg-logoBg relative block w-full appearance-none border border-auctionBlue px-3 py-2 focus:outline-auctionBrown">
+                </div>
+                <div class="mx-auto">
+                    <button type="submit" value="login" id="submit-button"
+                        class="bg-auctionBlue p-2 ml-1 rounded-sm text-almostWhite mx-auto">Register</button>
+                </div>
+                <div class="bg-auctionBlue rounded text-center hidden" id="register-success-message">
+                    Account successfully created
+                </div>
+                <div class="bg-auctionRed rounded text-center hidden" id="register-error-message">
+
+                </div>
+            </form>
+        </div>
+    </main>
+    <footer class="bg-auctionBg flex place-content-center mt-auto">
+        <div class="text-auctionBrown">NOROFF SEMESTER PROJECT</div>
+    </footer>
+    <script type="module" src="../main.js"></script>
+</body>
+
+</html>

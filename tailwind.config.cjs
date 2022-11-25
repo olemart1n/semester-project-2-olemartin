@@ -1,6 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-    content: ["./index.html", "./src/**/*.{mjs, js,ts,jsx,tsx}"],
+    content: ["*.html", "**/*.html", "./js/**/*.{mjs, js,ts,jsx,tsx}"],
     theme: {
         screens: {
             sm: "480px",
@@ -14,6 +14,7 @@ module.exports = {
                 auctionBrown: "#471313",
                 auctionRed: "#F26161",
                 auctionGrey: "#272727",
+                auctionInput: "#B6B7BC",
                 logoBg: "#3E3A3A",
                 auctionBg: "#D9D9D9",
                 almostWhite: "#F3F3F3",

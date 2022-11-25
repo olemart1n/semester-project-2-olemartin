@@ -15,7 +15,7 @@ export const renderListings = () => {
             <i class="absolute fa-sharp fa-solid fa-expand top-5 right-5 text-black  fa-xl"></i>
             <img
               src="${element.media[0]}"
-              alt="" class="object-top  object-cover h-2/3 shrink min-w-full object-none">
+              alt="" class="object-top  object-cover h-2/3 shrink min-w-full">
             <div class="flex text-auctionBlue min-w-full justify-around">
             <div><span>${hourLeft(element.endsAt)}</span></div>
             <a href="${base}listings/${

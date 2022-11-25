@@ -1,4 +1,7 @@
 import "./style.css";
-import { renderListings } from "./src/js/templates/listings.mjs";
+import { authenticationRouter } from "./js/router/index.js";
 
-renderListings();
+// renderListings();
+// toggleNav();
+// toggleSearch();
+authenticationRouter();

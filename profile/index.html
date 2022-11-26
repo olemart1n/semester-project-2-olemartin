@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://kit.fontawesome.com/91d90be639.js" crossorigin="anonymous"></script>
+    <!-- <link rel="stylesheet" href="./style.css"> -->
+    <title>Profile</title>
+</head>
+
+<body>
+    <nav class="relative containers p-6 bg-almostWhite">
+        <div class="flex items-center justify-between flex-wrap md:grid md:grid-cols-3 relative">
+            <div class="md:hidden" id="zoomglass">
+                <i class="fa-solid fa-magnifying-glass text-logoBg fa-lg"></i>
+            </div>
+            <div class="hidden md:flex sm-w-auto w-full items-center md:relative absolute top-20 md:top-auto"
+                id="navWithSearch">
+                <form action="" method="get" class="flex items-center">
+                    <input class="bg-auctionInput py-1" type="search" name="search" id="searchInput">
+                    <button class="bg-auctionGrey p-1 ml-1 rounded-sm text-almostWhite">search</button>
+                </form>
+            </div>
+            <div class="lg:p-2 mx-auto justify-center">
+                <h1 class="bg-logoBg px-3 py-2 shrink">AuctionHouse</h1>
+            </div>
+            <div class="sm:hidden" id="bar">
+                <i class="fa-solid fa-bars fa-lg text-logoBg"></i>
+            </div>
+            <div class="hidden sm:flex sm:space-x-9 sm:w-auto items-center justify-between mx-auto w-full "
+                id="navWithBar">
+                <div class="">
+                    <a href="./" class="text-logoBg" id="nav-link-1">profile</a>
+                </div>
+                <div class="">
+                    <a href="./bids.html" class="text-logoBg" id="nav-link-2">bids</a>
+                </div>
+                <!-- <div class="">
+          <a href="./authenticate.html?register" class="text-logoBg">Create user</a>
+        </div> -->
+            </div>
+        </div>
+
+    </nav>
+    <main class="bg-auctionBg">
+        <div class="flex flex-col mx-5 md:w-2/3 md:mx-auto sm:grid sm:gap-4 sm:grid-cols-2" id="listingsFeed">
+        </div>
+    </main>
+    <script type="module" src="/main.js"></script>
+</body>
+
+</html>

@@ -1,7 +1,11 @@
 import { renderListings } from "./listings.mjs";
-import { authedNav } from "./authedNav.mjs";
+import { renderItem } from "./item/item.mjs";
 
-export const authedFuntions = () => {
-    renderListings();
-    authedNav();
+export const homeRouter = () => {
+    if (document.location.href.includes("item")) {
+        renderItem();
+    } else {
+        renderListings();
+    }
+    // renderListings();
 };

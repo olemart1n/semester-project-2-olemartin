@@ -25,7 +25,7 @@ export const loginRequest = () => {
                 save("email", email);
                 save("avatar", avatar);
                 setTimeout(() => {
-                    window.location.replace("/index.html");
+                    window.location.replace("/feed");
                 }, 2000);
             } else if (data.statusCode === 401) {
                 errorMessage.classList.remove("hidden");

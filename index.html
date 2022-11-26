@@ -24,7 +24,9 @@
         </form>
       </div>
       <div class="lg:p-2 mx-auto justify-center">
-        <h1 class="bg-logoBg px-3 py-2 shrink">AuctionHouse</h1>
+        <a href="/">
+          <h1 class="bg-logoBg text-almostWhite font-light px-3 py-2 shrink">AuctionHouse</h1>
+        </a>
       </div>
       <div class="sm:hidden" id="bar">
         <i class="fa-solid fa-bars fa-lg text-logoBg"></i>
@@ -43,8 +45,10 @@
     </div>
 
   </nav>
-  <main class="bg-auctionBg">
+  <main class="bg-auctionBg min-h-full">
     <div class="flex flex-col mx-5 md:w-2/3 md:mx-auto sm:grid sm:gap-4 sm:grid-cols-2" id="listingsFeed">
+    </div>
+    <div class="flex flex-col md:w-3/4 m-auto p-3" id="itemContainer">
     </div>
   </main>
   <script type="module" src="/main.js"></script>

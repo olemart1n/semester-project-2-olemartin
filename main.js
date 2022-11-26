@@ -1,7 +1,6 @@
 import "./style.css";
-import { authenticationRouter } from "./js/router/index.js";
+import { authenticationRouter } from "./js/authentication/index.mjs";
+import { homeRouter } from "./js/home/index.mjs";
 
-// renderListings();
-// toggleNav();
-// toggleSearch();
 authenticationRouter();
+homeRouter();

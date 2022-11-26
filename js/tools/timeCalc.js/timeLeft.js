@@ -10,12 +10,19 @@ import { hour, day, timeGap } from "./definitions.js";
 //     const minsLeft = Math.floor(timeGap() % hour) / min;
 //     return minsLeft;
 // };
-export const hourLeft = (endsAt) => {
+export const hourLeft = (endsAt, bids) => {
     const hoursLeft = Math.floor((timeGap(endsAt) % day) / hour);
+    const currentBid = bids[bids.length - 1].amount;
     // console.log(Math.floor((timeGap(endsAt) % day) / hour));
-    console.log(typeof hoursLeft);
     if (hoursLeft <= 0) {
-        return "expired";
+        return '<span class="bg-auctionRed text-auctionGrey">' + "SOLD" + "</span>";
     }
-    return "hours left" + " " + hoursLeft;
+    return (
+        "<span>" + hoursLeft + " hours left" + "</span><span>Bid:" + currentBid + "$" + "</span>"
+    );
+};
+
+export const currentBid = (bids) => {
+    const currentBid = bids[bids.length - 1].amount;
+    return "bid: " + currentBid + " " + "$";
 };

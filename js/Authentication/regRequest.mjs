@@ -27,7 +27,7 @@ export const registerNewAccount = () => {
                         save("email", email);
                         save("avatar", avatar);
                         setTimeout(() => {
-                            window.location.replace("/index.html");
+                            window.location.replace("/feed");
                         }, 2000);
                     });
                 }, 2000);

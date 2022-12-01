@@ -1,6 +1,6 @@
-import { authedNav } from "./authedNav.mjs";
-import { loginRequest } from "./loginRequest.mjs";
-import { registerNewAccount } from "./regRequest.mjs";
+import { authedNav } from "./authedNav.js";
+import { loginRequest } from "./loginRequest.js";
+import { registerNewAccount } from "./regRequest.js";
 import { authCheck } from "../tools/authCheck.mjs";
 import { toggleNav, toggleSearch } from "../tools/UI/nav.mjs";
 

@@ -1,13 +1,17 @@
+import { load } from "./storage/index";
 export const endpoints = {
     base: "https://api.noroff.dev/api/v1/auction/",
     register: "auth/register",
     login: "auth/login",
+    account: "profiles/" + load("name") + "?_listings=true",
+    listings: "listings",
+    deletE: "74bef28d-64f2-4839-8d4f-b7e49bbffaff",
 };
 export const { base } = endpoints;
 
 const header = {
     "Content-Type": "application/json",
-    Authorization: `Bearer ${localStorage.getItem("")}`,
+    Authorization: `Bearer ${load("auctionToken")}`,
 };
 
 export const fetchOptions = {
@@ -32,7 +36,7 @@ export const fetchOptions = {
         headers: header,
         body: {},
     },
-    deletePost: {
+    deleteOpt: {
         method: "DELETE",
         headers: header,
     },

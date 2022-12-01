@@ -1,6 +1,6 @@
 import { apiRequest } from "../tools/fetch.js";
 import { hourLeft } from "../tools/timeCalc.js/timeLeft.js";
-import { expandImg } from "./itemModal.mjs";
+import { expandImg } from "./expandImg.js";
 
 const listingsContainer = document.querySelector("#listingsFeed");
 
@@ -19,7 +19,7 @@ export const renderListings = () => {
                 `
             <div
             class="relative aspect-square lg:aspect-square flex flex-col items-center mb-2 shrink justify-between bg-almostWhite overflow-auto hover:overflow-scrollborder-5">
-            <i class="absolute fa-sharp fa-solid fa-expand top-5 right-5 text-black  fa-xl" id="${
+            <i class="absolute fa-sharp fa-solid fa-expand top-5 right-5 text-black fa-lg" id="${
                 element.id
             }"></i>
             <p class="absolute text-almostWhite p-1 bg-auctionBrown  left-0 bottom-20">${

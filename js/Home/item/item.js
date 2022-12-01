@@ -3,9 +3,11 @@ import { hourLeft } from "../../tools/timeCalc.js/timeLeft";
 const itemContainer = document.querySelector("#itemContainer");
 const listingFeed = document.querySelector("#listingsFeed");
 const mainTag = document.querySelector("main");
+const filters = document.querySelector("#filters");
 
 export const renderItem = () => {
     listingFeed.innerHTML = "";
+    filters.remove();
     document.title = `Item | AuctionHouse`;
     mainTag.classList.remove("bg-auctionBg");
     const queryString = document.location.search;

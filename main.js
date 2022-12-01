@@ -1,6 +1,10 @@
 import "./style.css";
 import { authenticationRouter } from "./js/authentication/index.js";
 import { homeRouter } from "./js/home/index.js";
-
+import { filterRouter } from "./js/filters/index.js";
+import { toggleNav, toggleSearch } from "./js/tools/UI/nav.mjs";
+toggleNav();
+toggleSearch();
 authenticationRouter();
+filterRouter();
 homeRouter();

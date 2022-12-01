@@ -16,7 +16,7 @@
       <div class="md:hidden" id="zoomglass">
         <i class="fa-solid fa-magnifying-glass text-logoBg fa-xl"></i>
       </div>
-      <div class="hidden md:flex sm-w-auto w-full items-center md:relative absolute top-20 md:top-auto"
+      <div class="hidden md:flex sm-w-auto w-full items-center md:relative absolute top-16 md:top-auto"
         id="navWithSearch">
         <form action="" method="get" class="flex items-center">
           <input class="bg-auctionInput py-1" type="search" name="search" id="searchInput">
@@ -38,14 +38,25 @@
         <div class="">
           <a href="./authentication/register.html" class="text-logoBg" id="nav-link-2">Create account</a>
         </div>
-        <!-- <div class="">
-          <a href="./authenticate.html?register" class="text-logoBg">Create user</a>
-        </div> -->
       </div>
+      <!-- FILTERS THIS MIGHT GET REMOVED -->
     </div>
 
   </nav>
   <main class="bg-auctionBg">
+    <div class="hidden md:block md:columns-2 md:w-full md:bg-auctionInput bg-almostWhite pt-10 md:pt-1 md:p-1"
+      id="filters">
+      <!-- <nav>
+        <div class="flex">
+            <p class="text-logoBg mx-auto">sort by</p>
+        </div>
+        <div class="flex flex-col md:flex-row md:pb-0 pb-0 gap-2">
+             <button class="text-logoBg bg-auctionBlue w-1/4  rounded-none px-1 border-none mx-auto w-30" id="filter-link-1">new</button>
+             <button class="text-logoBg bg-auctionBlue w-1/4 rounded-none px-1 border-none mx-auto sw-30" id="filter-link-2">expires soon</button>
+        </div>
+        </nav> -->
+    </div>
+    <h2 class="left-40 text-logoBg text-lg p-3 font-bold" id="listingHeader">Popular listings</h2>
     <div class="flex flex-col mx-5 md:w-2/3 md:mx-auto sm:grid sm:gap-4 sm:grid-cols-2" id="listingsFeed">
     </div>
     <div class="flex flex-col md:w-3/4 m-auto p-3" id="itemContainer">

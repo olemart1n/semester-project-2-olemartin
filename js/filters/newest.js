@@ -5,7 +5,7 @@ const listingsContainer = document.querySelector("#listingsFeed");
 const newBtn = document.querySelector("#filter-link-1");
 const h2Header = document.querySelector("#listingHeader");
 
-// parameters gets changed if user click nect page
+// parameters gets changed if user click nect page [not coded yet]
 export const newest = async (start, end) => {
     let i = start;
     listingsContainer.innerHTML = "";

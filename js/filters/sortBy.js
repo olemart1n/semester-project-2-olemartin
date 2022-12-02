@@ -9,22 +9,25 @@ export const filter = () => {
     newBtn.addEventListener("click", (e) => {
         newest(0, 14);
         e.currentTarget.classList.add("bg-auctionBlue");
+        expireSoonBtn.classList.remove("bg-auctionBlue");
     });
-    expireSoonBtn.addEventListener("click", () => {
+    expireSoonBtn.addEventListener("click", (e) => {
         expiringSoon(0, 14);
+        e.currentTarget.classList.add("bg-auctionBlue");
+        newBtn.classList.remove("bg-auctionBlue");
     });
 };
 
 const newBtn = createElement("button", {
-    class: "text-almostWhite bg-logoBg w-1/4  rounded-none px-1 border-none mx-auto w-30",
+    class: "text-almostWhite bg-logoBg w-1/4  rounded-none px-1 border-none mx-auto w-30 enabled:hover:outline-none",
     id: "filter-link-1",
 });
 newBtn.innerHTML = "Newest";
 const expireSoonBtn = createElement("button", {
-    class: "text-almostWhite bg-logoBg w-1/4  rounded-none px-1 border-none mx-auto w-30",
+    class: "text-almostWhite bg-logoBg w-1/4  rounded-none px-1 border-none mx-auto w-30 enabled:hover:outline-none",
     id: "filter-link-2",
 });
-expireSoonBtn.innerHTML = "Expiring soon";
+expireSoonBtn.innerHTML = "Expiring today";
 const nav = createElement("nav", {});
 const div1 = createElement("div", { class: "flex" });
 const p = createElement("p", { class: "text-logoBg mx-auto" });

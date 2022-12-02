@@ -4,17 +4,22 @@ const itemContainer = document.querySelector("#itemContainer");
 const listingFeed = document.querySelector("#listingsFeed");
 const mainTag = document.querySelector("main");
 const filters = document.querySelector("#filters");
+const h2Header = document.querySelector("#listingHeader");
 
 export const renderItem = () => {
     listingFeed.innerHTML = "";
+    h2Header.innerHTML = "";
     filters.remove();
     document.title = `Item | AuctionHouse`;
     mainTag.classList.remove("bg-auctionBg");
     const queryString = document.location.search;
     const id = new URLSearchParams(queryString).get("id");
     const spesificItem = `listings/${id}?_seller=true&_bids=true`;
-
+    h2Header.addEventListener("click", () => {
+        window.location.href = "/";
+    });
     apiRequest(spesificItem).then((data) => {
+        h2Header.innerHTML = data.tags;
         itemContainer.insertAdjacentHTML(
             "beforeend",
             `

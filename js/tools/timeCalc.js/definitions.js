@@ -9,3 +9,14 @@ export const timeGap = (endsAt) => {
     const gap = expiryDate - now;
     return gap;
 };
+
+export const aDay = (endsAt) => {
+    const expiryDate = new Date(endsAt);
+    const now = new Date();
+    const gap = expiryDate - now;
+    const gapArr = [];
+    if (gap < 86400000) {
+        gapArr.push[gap];
+    }
+    return gapArr;
+};

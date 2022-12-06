@@ -17,9 +17,23 @@ export const expiringSoon = async (start, end) => {
         const lessThanADay = data.filter((data) => {
             return timeGap(data.endsAt) < 86400000 && timeGap(data.endsAt) > 0;
         });
-        const finalArray = lessThanADay.filter((data) => {
-            return closeToExp(data.endsAt);
+        const justTimeGaps = [];
+        lessThanADay.forEach((element) => {
+            justTimeGaps.push(element.endsAt);
         });
+        const sorted = closeToExp(justTimeGaps);
+
+        const finalArray = [];
+        for (let i = 0; i < sorted.length; i++) {
+            const element = sorted[i];
+            for (let j = 0; j < lessThanADay.length; j++) {
+                let currentEl = lessThanADay[j];
+                if (lessThanADay[j].endsAt === element && !finalArray.includes(lessThanADay[j])) {
+                    finalArray.push(currentEl);
+                }
+            }
+        }
+        // THE ARRAY WICH NOW HAS THE LISTING PROPERLU ARRANGED IS FINALARRAY
         for (i = 0; i < end; i++) {
             const element = finalArray[i];
             if (element === undefined) {
@@ -33,3 +47,4 @@ export const expiringSoon = async (start, end) => {
     });
     expandImg();
 };
+// if (array.includes(value) === false) array.push(value);

@@ -3,6 +3,7 @@ import { createElement } from "../tools/factory.js";
 import { oneCunterBox } from "../tools/timeCalc.js/countdown.js";
 import { carousell } from "./carousell.js";
 import { newBid } from "../forms/newBid.js";
+import { inputKeyup } from "./inputKeyEvent.js";
 import {
     counterBox,
     highestBid,
@@ -61,22 +62,24 @@ export const renderItem = () => {
         if (data.bids.length > 0) {
             rightSideText.innerHTML =
                 data.bids[data.bids.length - 1].bidderName +
+                ": " +
                 data.bids[data.bids.length - 1].amount +
-                " " +
                 "$";
         } else {
             rightSideText.innerHTML = 0 + "$";
         }
         descriptionText.innerHTML = data.description;
         descriptionTags.innerHTML = "tags: " + data.tags.toString("");
+        inputKeyup(
+            bidInput,
+            data.bids[data.bids.length - 1].amount,
+            bidBtn,
+            data.title,
+            data.endsAt,
+            data.bids,
+            data.media[0],
+            data.id
+        );
         console.log(data);
     });
-    bidForm.addEventListener("submit", (e) => {
-        e.preventDefault();
-        newBid(e);
-    });
 };
-
-{
-    /* <i class="absolute fa-sharp fa-solid fa-expand top-5 right-5 text-black  fa-xl"></i> */
-}

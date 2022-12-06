@@ -19,11 +19,11 @@ export const bidInput = createElement("input", {
     id: "bidInput",
     name: "amount",
     type: "number",
-    class: "bg-almostWhite border border-2 w-10 bg-white",
+    class: "bg-almostWhite border border-2 w-10 bg-white text-auctionGrey",
     placeholder: "$",
 });
 export const bidBtn = createElement("input", {
-    type: "submit",
+    type: "button",
     value: "SUBMIT",
     class: "border border-radius-sm bg-white text-auctionBlue px-2",
 });
@@ -37,7 +37,7 @@ export const bidLabel = createElement("label", {
 });
 bidLabel.textContent = "Place a bid";
 // THE FORM (both appended)
-export const bidForm = createElement("form", {
+export const bidForm = createElement("div", {
     class: "bg-auctionBlue bg-opacity-50 md:w-4/5 mx-auto flex my-2 p-1",
 });
 
@@ -50,9 +50,16 @@ export const slideContainer = createElement("div", {
 
 export const title = createElement("h1", { class: "text-auctionBlue text-xl mx-auto" });
 export const seller = createElement("p", { class: "text-auctionBrown mx-auto" });
+
+//---------------------------------------------------------
 export const imageLabels = createElement("div", {
-    class: "flex place-content-center align-center my-5 ",
+    class: "flex place-content-center align-center my-5 flex-wrap",
 });
+const imageLabelsHeader = createElement("small", {
+    class: "text-auctionGrey w-full flex place-content-center",
+});
+imageLabelsHeader.innerHTML = "images";
+imageLabels.append(imageLabelsHeader);
 export const itemDetails = createElement("div", {
     class: "bg-white p-5 mx-auto   md:w-4/5 border border-auctionBrown rounded-lg drop-shadow-sm",
 });
@@ -60,6 +67,8 @@ export const itemDetails = createElement("div", {
 mainDiv.append(title);
 mainDiv.append(seller);
 mainDiv.append(itemDetails);
+
+//------------------------------------------------------
 export const description = createElement("div", {
     class: "mx-auto my-5 md:w-4/5 flex flex-wrap divide-x divide-slate-200",
 });

@@ -1,15 +1,4 @@
 import { hour, day, timeGap } from "./definitions.js";
-// export const timeLeft = (endsAt) => {
-//     const expiryDate = new Date(endsAt);
-//     const now = new Date();
-//     const gap = expiryDate - now;
-//     const hoursLeft = Math.floor(gap % day) / hour;
-//     const minsLeft = Math.floor(gap % hour) / min;
-// };
-// export const minLeft = (endsAt) => {
-//     const minsLeft = Math.floor(timeGap() % hour) / min;
-//     return minsLeft;
-// };
 export const hourLeft = (endsAt, bids) => {
     const hoursLeft = Math.floor((timeGap(endsAt) % day) / hour);
     // const currentBid = bids[bids.length - 1].amount;
@@ -32,12 +21,6 @@ export const currentBid = (bids) => {
     return "bid: " + currentBid + " " + "$";
 };
 
-// let currentBid;
-// if (bids.length > 0) {
-//     currentBid = bids[bids.length - 1].amount;
-// } else {
-//     currentBid = "0";
-// }
 export const closeToExp = (input) => {
     let array = [...input];
     for (let i = 0; i < array.length; i++) {

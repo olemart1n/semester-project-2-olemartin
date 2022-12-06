@@ -5,7 +5,7 @@ export const carousell = (mediaArr, slideContainer, sifferContainer) => {
         const sifferBox = createElement("div", {
             class: "border bg-auctionBlue aspect-square flex h-7 mx-3 place-content-center items-center border-2 border-almostWhite drop-shadow-md font-bold",
         });
-        sifferBox.innerHTML = index;
+        sifferBox.innerHTML = index + 1;
         sifferContainer.append(sifferBox);
         sifferBox.addEventListener("click", (e) => {
             document.querySelector(".bg-auctionBlue").classList.add("bg-slate-400");
@@ -20,14 +20,16 @@ export const carousell = (mediaArr, slideContainer, sifferContainer) => {
         });
         //
         const anImg = createElement("img", {
-            class: " object-top  object-cover h-2/3 shrink w-4/5 mx-auto currentImg aspect-square drop-shadow-md",
-            id: index,
+            class: " object-top  object-cover h-2/3 shrink w-4/5 mx-auto currentImg aspect-square drop-shadow-md hidden",
+            id: index + 1,
         });
+        if (index === 0) {
+            anImg.classList.remove("hidden");
+        }
         anImg.src = element;
         slideContainer.append(anImg);
         if (index !== 0) {
             sifferBox.classList.add("bg-slate-400");
-            anImg.classList.add("hidden");
         }
     });
 };

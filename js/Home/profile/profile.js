@@ -7,25 +7,32 @@ const { account } = endpoints;
 const { getWithJwt } = fetchOptions;
 const listingFeed = document.querySelector("#listingsFeed");
 const main = document.querySelector("main");
+const listingHeader = document.querySelector("#listingHeader");
 main.classList.add("flex");
 main.classList.add("flex-col");
 
 const profileContainer = createElement("div", {
-    class: "flex flex-wrap justify-around md:w-3/4 m-auto p-3 bg-auctionBlue mb-8",
+    class: "flex flex-wrap justify-around md:w-3/4 m-auto p-3 bg-auctionBlue bg-opacity-50 mb-8",
+    id: "profileContainer",
 });
 
 // BUTTON ----------
 const button = createElement("button", {
-    class: " px-3 py-2 bg-auctionRed rounded-none mx-auto border-none",
+    class: " px-3 py-2 bg-auctionRed rounded-none mx-auto border-none w-full",
 });
 button.innerHTML = "Add listing";
 
-export const renderProfile = () => {
+export const renderProfile = async () => {
     listingFeed.innerHTML = "";
     document.title = `Profile | AuctionHouse`;
-    // itemForm.innerHTML = entryInputs();
+    listingHeader.innerHTML = "Your details";
     main.append(profileContainer);
-    apiRequest(account, getWithJwt).then((data) => {
+    await apiRequest(account, getWithJwt).then((data) => {
+        const listings = data.listings;
+        let listContainer = createElement("div", { class: "bg-autcionRed flex flex-col border-r" });
+        listings.forEach((element) => {
+            listContainer.innerHTML += `<a href="">${element.title}</a>`;
+        });
         profileContainer.insertAdjacentHTML(
             "beforeend",
             `
@@ -35,17 +42,21 @@ export const renderProfile = () => {
             <p class="text-lg">${data.email}</p>
             </div>
             <div>
+            <div class="">
             <h3 class="text-xl font-bold">credits left: ${data.credits}</h3>
-            </div>
-            <div class="w-full mt-20 flex"> 
             <p class="text-xl mx-auto">YOUR LISTINGS ${data._count.listings}</p>
+            <div id="listingsList">
+            </div>
+            </div>
             </div>
         `
         );
-        console.log(data);
+        document.querySelector("#listingsList").append(listContainer);
+        console.log(listContainer);
     });
-    main.insertAdjacentElement("beforeend", button);
-    main.insertAdjacentElement("beforeend", itemForm);
+    // document.querySelector("#listingsList").append(listContainer);
+    profileContainer.insertAdjacentElement("beforeend", button);
+    profileContainer.insertAdjacentElement("beforeend", itemForm);
     button.addEventListener("click", (e) => {
         itemForm.classList.toggle("hidden");
     });

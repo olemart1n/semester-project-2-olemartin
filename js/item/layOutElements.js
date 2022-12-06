@@ -1,0 +1,90 @@
+import { createElement } from "../tools/factory";
+
+export const counterBox = createElement("div", {
+    class: "counterBox w-full grid grid-cols-3  my-5 p-0",
+});
+
+// -- --
+export const leftSideText = createElement("p", { class: "text-auctionGrey" });
+export const rightSideText = createElement("p", { class: "text-auctionGrey" });
+
+export const highestBid = createElement("div", {
+    class: "w-full bg-green-200 flex justify-around md:w-3/4 mx-auto my-2   ",
+});
+highestBid.append(leftSideText);
+highestBid.append(rightSideText);
+
+// FORM
+export const bidInput = createElement("input", {
+    id: "bidInput",
+    name: "amount",
+    type: "number",
+    class: "bg-almostWhite border border-2 w-10 bg-white",
+    placeholder: "$",
+});
+export const bidBtn = createElement("input", {
+    type: "submit",
+    value: "SUBMIT",
+    class: "border border-radius-sm bg-white text-auctionBlue px-2",
+});
+export const bidSection = createElement("div", {
+    class: "w-1/2 shrink flex justify-end p-2 gap-1",
+});
+// BIT INPUT (left side)
+export const bidLabel = createElement("label", {
+    for: "bidInput",
+    class: " text-auctionBrown text-base w-1/2 flex place-content-center items-center",
+});
+bidLabel.textContent = "Place a bid";
+// THE FORM (both appended)
+export const bidForm = createElement("form", {
+    class: "bg-auctionBlue bg-opacity-50 md:w-4/5 mx-auto flex my-2 p-1",
+});
+
+export const mainDiv = createElement("div", {
+    class: "relative flex flex-col justify-between bg-almostWhite p-3",
+});
+export const slideContainer = createElement("div", {
+    class: "",
+});
+
+export const title = createElement("h1", { class: "text-auctionBlue text-xl mx-auto" });
+export const seller = createElement("p", { class: "text-auctionBrown mx-auto" });
+export const imageLabels = createElement("div", {
+    class: "flex place-content-center align-center my-5 ",
+});
+export const itemDetails = createElement("div", {
+    class: "bg-white p-5 mx-auto   md:w-4/5 border border-auctionBrown rounded-lg drop-shadow-sm",
+});
+
+mainDiv.append(title);
+mainDiv.append(seller);
+mainDiv.append(itemDetails);
+export const description = createElement("div", {
+    class: "mx-auto my-5 md:w-4/5 flex flex-wrap divide-x divide-slate-200",
+});
+export const descriptionHeader = createElement("h3", {
+    class: "text-md text-auctionBlue w-full",
+});
+descriptionHeader.innerHTML = "Description";
+export const descriptionText = createElement("p", { class: "text-auctionGrey w-1/2 p-1" });
+description.append(descriptionHeader);
+
+export const descriptionTags = createElement("p", {
+    class: "text-auctionGrey w-1/2 p-1",
+});
+
+description.append(descriptionText);
+description.append(descriptionTags);
+
+bidSection.append(bidInput);
+bidSection.append(bidBtn);
+bidForm.append(bidLabel);
+bidForm.append(bidSection);
+//IMAGE CONTAINER
+itemDetails.append(imageLabels);
+itemDetails.append(slideContainer);
+itemDetails.append(counterBox);
+itemDetails.append(highestBid);
+itemDetails.append(bidForm);
+itemDetails.append(description);

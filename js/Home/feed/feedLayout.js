@@ -1,7 +1,7 @@
 import { hourLeft } from "../../tools/timeCalc.js/timeLeft.js";
 export const feedLayout = (element) => {
     return `
-    <div
+  <div
     class="relative aspect-square lg:aspect-square flex flex-col items-center mb-2 shrink justify-between bg-almostWhite overflow-auto hover:overflow-scrollborder-5">
     <i class="absolute fa-sharp fa-solid fa-expand top-5 right-5 text-black fa-lg" id="${
         element.id

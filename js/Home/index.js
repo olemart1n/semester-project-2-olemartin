@@ -1,5 +1,5 @@
 import { renderWithBids } from "./feed/listings.js";
-import { renderItem } from "./item/item.js";
+import { renderItem } from "../item/item.js";
 import { renderProfile } from "./profile/profile.js";
 import { withBids } from "../filters/withBids.js";
 

@@ -1,5 +1,6 @@
 import { endpoints, fetchOptions } from "../endpoints.mjs";
 import { apiRequest } from "../tools/fetch.js";
+import { load, remove, save } from "../storage/index";
 const { entry } = fetchOptions;
 export const newBid = (inputs, itemId) => {
     const form = new FormData(inputs.currentTarget);
@@ -13,4 +14,7 @@ export const newBid = (inputs, itemId) => {
     apiRequest(`listings/${itemId}/bids`, entry).then((data) => {
         console.log(data);
     });
+    let currentWallet = load("credits");
+    const newWallet = currentWallet - Number(amount);
+    save("credits", newWallet);
 };

@@ -1,4 +1,4 @@
-import { createElement } from "../../tools/factory";
+import { createElement } from "../tools/factory";
 
 export const itemForm = createElement("form", {
     class: " hidden mt-8 bg-logoBg p-3 relative flex flex-col justify-center mx-auto md:w-2/3 w-full",

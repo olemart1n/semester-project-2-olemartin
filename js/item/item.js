@@ -5,6 +5,8 @@ import { carousell } from "./carousell.js";
 import { newBid } from "../forms/newBid.js";
 import { inputKeyup } from "./inputKeyEvent.js";
 import { timeGap } from "../tools/timeCalc.js/definitions.js";
+import { backArrow } from "../tools/UI/backArrow.js";
+import { authCheck } from "../tools/authCheck.mjs";
 import {
     counterBox,
     highestBid,
@@ -39,10 +41,7 @@ export const renderItem = () => {
     const queryString = document.location.search;
     const id = new URLSearchParams(queryString).get("id");
     const spesificItem = `listings/${id}?_seller=true&_bids=true`;
-    h2Header.addEventListener("click", () => {
-        window.location.href = "/";
-    });
-    h2Header.innerHTML = "&#x2190; back";
+    backArrow(h2Header);
 
     //APPEND ELEMENTS TO MAINDIV
     itemContainer.append(mainDiv);
@@ -56,7 +55,11 @@ export const renderItem = () => {
         }
         const endsAt = data.endsAt;
         title.innerHTML = data.title;
-        seller.innerHTML = `<a href="user/${data.seller.name}"><span class="text-auctionGrey">seller: </span>${data.seller.name}</a>`;
+        if (authCheck()) {
+            seller.innerHTML = `<a href="user/${data.seller.name}"><span class="text-auctionGrey">seller: </span>${data.seller.name}</a>`;
+        } else {
+            seller.innerHTML = `<a href="#">${data.seller.name} <span class="text-auctionGrey">(log in to visit ) </span></a>`;
+        }
 
         const currentTimeGap = timeGap(data.endsAt);
         if (currentTimeGap > 0) {
@@ -77,16 +80,20 @@ export const renderItem = () => {
         if (timeGap(data.endsAt) < 0) {
             bidSection.innerHTML = "Not possible to bid on this item";
         }
-        inputKeyup(
-            bidInput,
-            data.bids[data.bids.length - 1].amount,
-            bidBtn,
-            data.title,
-            data.endsAt,
-            data.bids,
-            data.media[0],
-            data.id
-        );
+        if (authCheck()) {
+            inputKeyup(
+                bidInput,
+                data.bids[data.bids.length - 1].amount,
+                bidBtn,
+                data.title,
+                data.endsAt,
+                data.bids,
+                data.media[0],
+                data.id
+            );
+        } else {
+            bidLabel.innerHTML = "log in to bid";
+        }
         console.log(data);
     });
 };

@@ -1,7 +1,7 @@
-import { createElement } from "../../tools/factory";
-import { apiRequest } from "../../tools/fetch";
-import { endpoints, fetchOptions } from "../../endpoints.mjs";
-import { createEntry } from "../../forms/entry";
+import { createElement } from "../tools/factory";
+import { apiRequest } from "../tools/fetch";
+import { endpoints, fetchOptions } from "../endpoints.mjs";
+import { createEntry } from "../forms/entry";
 import { itemForm } from "./entryInputs";
 const { account } = endpoints;
 const { getWithJwt } = fetchOptions;

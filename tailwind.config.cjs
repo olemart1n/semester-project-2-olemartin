@@ -19,6 +19,7 @@ module.exports = {
                 auctionBg: "#D9D9D9",
                 almostWhite: "#F3F3F3",
                 veryLightGrey: "hsl(0, 0%, 98%)",
+                auctionGreen: "#18c6a3",
             },
         },
     },

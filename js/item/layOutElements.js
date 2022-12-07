@@ -11,8 +11,7 @@ export const rightSideText = createElement("p", { class: "text-auctionGrey" });
 export const highestBid = createElement("div", {
     class: "w-full bg-green-200 flex justify-around md:w-3/4 mx-auto my-2   ",
 });
-highestBid.append(leftSideText);
-highestBid.append(rightSideText);
+highestBid.append(leftSideText, rightSideText);
 
 // FORM
 export const bidInput = createElement("input", {
@@ -48,7 +47,9 @@ export const slideContainer = createElement("div", {
     class: "",
 });
 
-export const title = createElement("h1", { class: "text-auctionBlue text-xl mx-auto" });
+export const title = createElement("h1", {
+    class: "text-auctionBlue block text-xl mx-auto flex place-content-center",
+});
 export const seller = createElement("p", { class: "text-auctionBrown mx-auto" });
 
 //---------------------------------------------------------
@@ -61,12 +62,9 @@ const imageLabelsHeader = createElement("small", {
 imageLabelsHeader.innerHTML = "images";
 imageLabels.append(imageLabelsHeader);
 export const itemDetails = createElement("div", {
-    class: "bg-white p-5 mx-auto   md:w-4/5 border border-auctionBrown rounded-lg drop-shadow-sm",
+    class: "bg-white p-5 mx-auto   md:w-4/5 border border-auctionBrown rounded-lg drop-shadow-sm my-10",
 });
-
-mainDiv.append(title);
-mainDiv.append(seller);
-mainDiv.append(itemDetails);
+mainDiv.append(seller, itemDetails);
 
 //------------------------------------------------------
 export const description = createElement("div", {
@@ -83,17 +81,17 @@ export const descriptionTags = createElement("p", {
     class: "text-auctionGrey w-1/2 p-1",
 });
 
-description.append(descriptionText);
-description.append(descriptionTags);
+description.append(descriptionText, descriptionTags);
 
-bidSection.append(bidInput);
-bidSection.append(bidBtn);
-bidForm.append(bidLabel);
-bidForm.append(bidSection);
+bidSection.append(bidInput, bidBtn);
+bidForm.append(bidLabel, bidSection);
 //IMAGE CONTAINER
-itemDetails.append(imageLabels);
-itemDetails.append(slideContainer);
-itemDetails.append(counterBox);
-itemDetails.append(highestBid);
-itemDetails.append(bidForm);
-itemDetails.append(description);
+itemDetails.append(
+    title,
+    imageLabels,
+    slideContainer,
+    counterBox,
+    highestBid,
+    bidForm,
+    description
+);

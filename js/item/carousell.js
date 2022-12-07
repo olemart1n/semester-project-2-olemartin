@@ -2,7 +2,7 @@ import { createElement } from "../tools/factory";
 
 export const carousell = (mediaArr, slideContainer, sifferContainer) => {
     mediaArr.forEach((element, index) => {
-        const sifferBox = createElement("div", {
+        const sifferBox = createElement("button", {
             class: "border bg-auctionBlue aspect-square flex h-7 mx-3 place-content-center items-center border-2 border-almostWhite drop-shadow-md font-bold",
         });
         sifferBox.innerHTML = index + 1;

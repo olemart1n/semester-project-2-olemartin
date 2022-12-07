@@ -3,7 +3,7 @@ import { apiRequest } from "../tools/fetch";
 import { expandImg } from "../home/feed/expandImg";
 import { timeGap } from "../tools/timeCalc.js/definitions";
 import { closeToExp } from "../tools/timeCalc.js/timeLeft";
-import { oneCunterBox } from "../tools/timeCalc.js/countdown";
+import { counterContainer } from "../tools/timeCalc.js/countdown";
 const listingsContainer = document.querySelector("#listingsFeed");
 const h2Header = document.querySelector("#listingHeader");
 
@@ -42,7 +42,7 @@ export const expiringSoon = async (start, end) => {
             const defined = element.endsAt;
             const id = element.id;
             listingsContainer.insertAdjacentHTML("beforeend", feedLayoutNr2(element));
-            oneCunterBox(id, defined);
+            counterContainer(id, defined);
         }
     });
     expandImg();

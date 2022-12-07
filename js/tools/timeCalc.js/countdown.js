@@ -2,7 +2,7 @@ import { createElement } from "../factory";
 import { timeGap } from "./definitions";
 import { hour, day, min, sec } from "./definitions";
 
-export const oneCunterBox = (element, endsAt) => {
+export const counterContainer = (element, endsAt) => {
     const counterSection = document.querySelector(".counterBox" + element);
     const hourDiv = createElement("div", { class: "time flex flex-col" });
     const minDiv = createElement("div", { class: "time flex flex-col" });

@@ -1,5 +1,5 @@
 import { createElement } from "../tools/factory";
-import { hourLeft } from "../tools/timeCalc.js/timeLeft";
+import { hourLeft, minutesLeft } from "../tools/timeCalc.js/timeLeft";
 import { load } from "../storage";
 import { newBid } from "../forms/newBid";
 
@@ -17,7 +17,7 @@ export const expandForm = (btn, title, bid, endsAt, allBids, firstImg, itemId) =
         img.src = firstImg;
         endDate.innerHTML =
             "<span class='underline underline-offset-2 '>current status</span>" +
-            hourLeft(endsAt, allBids);
+            minutesLeft(endsAt, allBids);
         currentCredit.innerHTML = "Your credits " + load("credits") + "$";
         input.value = bid;
         closeBtn.addEventListener("click", () => {

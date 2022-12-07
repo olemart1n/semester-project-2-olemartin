@@ -10,7 +10,7 @@ export const authenticationRouter = () => {
         loginRequest();
     } else if (currentUrl.includes("register")) {
         registerNewAccount();
-    } else if (authCheck()) {
+    } else if (authCheck() === true) {
         toggleNav();
         toggleSearch();
         authedNav();

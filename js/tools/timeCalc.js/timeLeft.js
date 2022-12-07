@@ -1,4 +1,4 @@
-import { hour, day, timeGap } from "./definitions.js";
+import { hour, day, timeGap, min, sec } from "./definitions.js";
 export const hourLeft = (endsAt, bids) => {
     const hoursLeft = Math.floor((timeGap(endsAt) % day) / hour);
     // const currentBid = bids[bids.length - 1].amount;
@@ -8,12 +8,26 @@ export const hourLeft = (endsAt, bids) => {
     } else {
         currentBid = "0";
     }
-    if (hoursLeft <= 0) {
+    if (hoursLeft < 0) {
         return '<span class="bg-auctionRed text-auctionGrey">' + "SOLD" + "</span>";
     }
     return (
         "<span>" + hoursLeft + " hours left" + "</span><span>Bid:" + currentBid + "$" + "</span>"
     );
+};
+export const minutesLeft = (endsAt, bids) => {
+    const minLeft = Math.floor((timeGap(endsAt) % hour) / min);
+    // const currentBid = bids[bids.length - 1].amount;
+    let currentBid;
+    if (bids.length > 0) {
+        currentBid = bids[bids.length - 1].amount;
+    } else {
+        currentBid = "0";
+    }
+    if (minLeft < 0) {
+        return '<span class="bg-auctionRed text-auctionGrey">' + "SOLD" + "</span>";
+    }
+    return "<span>" + minLeft + " min left" + "</span><span>Bid:" + currentBid + "$" + "</span>";
 };
 
 export const currentBid = (bids) => {

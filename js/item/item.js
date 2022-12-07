@@ -1,9 +1,10 @@
 import { apiRequest } from "../tools/fetch.js";
 import { createElement } from "../tools/factory.js";
-import { oneCunterBox } from "../tools/timeCalc.js/countdown.js";
+import { counterContainer } from "../tools/timeCalc.js/countdown.js";
 import { carousell } from "./carousell.js";
 import { newBid } from "../forms/newBid.js";
 import { inputKeyup } from "./inputKeyEvent.js";
+import { timeGap } from "../tools/timeCalc.js/definitions.js";
 import {
     counterBox,
     highestBid,
@@ -55,9 +56,12 @@ export const renderItem = () => {
         }
         const endsAt = data.endsAt;
         title.innerHTML = data.title;
-        seller.innerHTML = data.seller.name;
+        seller.innerHTML = `<a href="user/${data.seller.name}"><span class="text-auctionGrey">seller: </span>${data.seller.name}</a>`;
 
-        oneCunterBox("", endsAt);
+        const currentTimeGap = timeGap(data.endsAt);
+        if (currentTimeGap > 0) {
+            counterContainer("", endsAt);
+        }
         leftSideText.innerHTML = "Highest bid so far";
         if (data.bids.length > 0) {
             rightSideText.innerHTML =
@@ -70,6 +74,9 @@ export const renderItem = () => {
         }
         descriptionText.innerHTML = data.description;
         descriptionTags.innerHTML = "tags: " + data.tags.toString("");
+        if (timeGap(data.endsAt) < 0) {
+            bidSection.innerHTML = "Not possible to bid on this item";
+        }
         inputKeyup(
             bidInput,
             data.bids[data.bids.length - 1].amount,

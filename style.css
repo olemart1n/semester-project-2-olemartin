@@ -14,6 +14,7 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     -webkit-text-size-adjust: 100%;
+    background-color: rgba(196, 182, 182, 0.772);
 }
 input:focus {
     outline-style: none;
@@ -60,6 +61,8 @@ body {
     margin: 0;
     min-width: 320px;
     min-height: 100vh;
+    max-width: 1500px;
+    margin: auto;
 }
 
 /* main {

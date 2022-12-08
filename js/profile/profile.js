@@ -24,11 +24,19 @@ const main = document.querySelector("main");
 const listingHeader = document.querySelector("#listingHeader");
 const userContainer = document.querySelector("#itemContainer");
 const subUserContainer = createElement("div", { class: "" });
-
+//
+export const updateModal = createElement("div", { class: "w-full aspect-square hidden" });
+export const itemFormClone = itemForm.cloneNode(true);
+//
 export const renderProfile = async () => {
+    document.body.append(updateModal);
     userContainer.classList.add("min-h-screen");
     document.title = `Profile | AuctionHouse`;
     listingHeader.innerHTML = "Your details";
+    //
+    itemFormClone.id = "updateForm";
+    updateModal.append(itemFormClone);
+    //
     userContainer.append(headerSection, profileListings, subUserContainer);
     const active = [];
     const all = [];

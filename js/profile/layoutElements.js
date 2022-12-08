@@ -2,6 +2,7 @@ import { createElement } from "../tools/factory";
 import { itemForm } from "./entryInputs";
 import { timeGap } from "../tools/timeCalc.js/definitions.js";
 import { deleteFunc } from "./delete";
+import { updateFunc } from "./update";
 // HEADER OF PAGE --------------------------------------------------------
 export const headerSection = createElement("div", {
     class: "w-full  lg:w-2/4 sm:w-3/4 self-center flex flex-wrap",
@@ -54,7 +55,7 @@ export const listingContainer = (imgSrc, title, status, link, id) => {
     });
     // GRID 1
     const grid1 = createElement("img", {
-        class: "h-12 w-12 aspect-square object-cover m-auto",
+        class: "h-20 w-20 aspect-square object-cover m-auto",
     });
     grid1.src = imgSrc;
     // GRID 2
@@ -71,9 +72,7 @@ export const listingContainer = (imgSrc, title, status, link, id) => {
         class: "bg-auctionBlue text-auctionGrey w-1/2 mx-auto my-1",
         id: id,
     });
-    // updateBtn.addEventListener("click", () => {
-    //     console.log("hello");
-    // });
+    updateFunc(updateBtn);
     updateBtn.innerHTML = "Update";
     const deleteBtn = createElement("button", {
         class: "bg-auctionRed text-auctionGrey w-1/2 mx-auto my-1",

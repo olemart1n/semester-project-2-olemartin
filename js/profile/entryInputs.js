@@ -6,6 +6,8 @@ export const itemForm = createElement("form", {
     method: "post",
     required: "required",
 });
+const titleLabel = createElement("small", { class: "text-almostWhite mx-auto mt-2" });
+titleLabel.innerHTML = "Title";
 const title = createElement("input", {
     class: "bg-almostWhite mt-2 rounded p-1 text-black py-1",
     type: "text",
@@ -14,6 +16,8 @@ const title = createElement("input", {
     placeholder: "Title",
     required: "required",
 });
+const tagsLabel = createElement("small", { class: "text-almostWhite mx-auto mt-2" });
+tagsLabel.innerHTML = "tags";
 const tags = createElement("input", {
     class: "bg-almostWhite mt-2 rounded p-1 text-black py-1",
     type: "text",
@@ -21,6 +25,8 @@ const tags = createElement("input", {
     id: "tagsInput",
     placeholder: "tags",
 });
+const descriptionLabel = createElement("small", { class: "text-almostWhite mx-auto mt-2" });
+descriptionLabel.innerHTML = "Description";
 const description = createElement("input", {
     class: "bg-almostWhite mt-2 rounded p-1 text-black py-1",
     type: "text",
@@ -28,6 +34,8 @@ const description = createElement("input", {
     id: "descriptionInput",
     placeholder: "description",
 });
+const mediaLabel = createElement("small", { class: "text-almostWhite mx-auto mt-2" });
+mediaLabel.innerHTML = "Image URL's";
 const media = createElement("input", {
     class: "bg-almostWhite mt-2 rounded p-1 text-black py-1",
     type: "url",
@@ -86,9 +94,13 @@ btn.addEventListener("click", (e) => {
     media3.removeAttribute("disabled");
     e.currentTarget.classList.add("hidden");
 });
+itemForm.append(titleLabel);
 itemForm.append(title);
+itemForm.append(tagsLabel);
 itemForm.append(tags);
+itemForm.append(descriptionLabel);
 itemForm.append(description);
+itemForm.append(mediaLabel);
 itemForm.append(media);
 itemForm.append(media1);
 itemForm.append(media2);

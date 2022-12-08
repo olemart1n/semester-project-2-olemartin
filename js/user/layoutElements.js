@@ -18,8 +18,9 @@ headerSection.append(userName);
 //-----------------------------------------------------------------------------
 // USER LISTINGS
 export const allItemsContinaer = createElement("div", { class: "py-20" });
-export const subHeader1 = createElement("h2", { class: "text-lg text-auctionGrey " });
+export const subHeader1 = createElement("h2", { class: "text-lg text-auctionGrey" });
 allItemsContinaer.append(subHeader1);
+//
 export const itemConainer = (aHref, aSrc, aTitle, anItemStatus) => {
     const itemLink = createElement("a", {
         class: "w-full grid grid-cols-3 relative h-24 items-center border rounded border-auctionBrown my-2 place-content-center",

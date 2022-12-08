@@ -1,6 +1,11 @@
-import { fetchOptions, endpoints } from "../../endpoints.mjs";
-import { apiRequest } from "../../tools/fetch.js";
-const { deletE } = endpoints;
-export const delte = () => {
-    apiRequest(deletE).then((data) => console.log(data));
+import { fetchOptions, endpoints, base } from "../endpoints.mjs";
+const { deleteOpt } = fetchOptions;
+const { listings } = endpoints;
+export const deleteFunc = (button) => {
+    button.addEventListener("click", () => {
+        fetch(base + listings + "/" + button.id, deleteOpt);
+        setTimeout(() => {
+            window.location.reload();
+        }, 500);
+    });
 };

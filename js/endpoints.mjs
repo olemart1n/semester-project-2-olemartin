@@ -5,7 +5,6 @@ export const endpoints = {
     login: "auth/login",
     account: "profiles/" + load("name") + "?_listings=true",
     listings: "listings",
-    deletE: "74bef28d-64f2-4839-8d4f-b7e49bbffaff",
 };
 export const { base } = endpoints;
 

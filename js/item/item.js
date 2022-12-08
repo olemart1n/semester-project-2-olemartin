@@ -56,7 +56,7 @@ export const renderItem = () => {
         const endsAt = data.endsAt;
         title.innerHTML = data.title;
         if (authCheck()) {
-            seller.innerHTML = `<a href="user/${data.seller.name}"><span class="text-auctionGrey">seller: </span>${data.seller.name}</a>`;
+            seller.innerHTML = `<a href="../user/${data.seller.name}"><span class="text-auctionGrey">seller: </span>${data.seller.name}</a>`;
         } else {
             seller.innerHTML = `<a href="#">${data.seller.name} <span class="text-auctionGrey">(log in to visit ) </span></a>`;
         }
@@ -80,10 +80,11 @@ export const renderItem = () => {
         if (timeGap(data.endsAt) < 0) {
             bidSection.innerHTML = "Not possible to bid on this item";
         }
+        const bidAmunt = data.bids[data.bids.length - 1]?.amount ?? 0;
         if (authCheck()) {
             inputKeyup(
                 bidInput,
-                data.bids[data.bids.length - 1].amount,
+                bidAmunt,
                 bidBtn,
                 data.title,
                 data.endsAt,
@@ -94,6 +95,5 @@ export const renderItem = () => {
         } else {
             bidLabel.innerHTML = "log in to bid";
         }
-        console.log(data);
     });
 };

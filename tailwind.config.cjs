@@ -16,7 +16,7 @@ module.exports = {
                 auctionGrey: "#272727",
                 auctionInput: "#B6B7BC",
                 logoBg: "#3E3A3A",
-                auctionBg: "#D9D9D9",
+                auctionBg: "#E2E9EF",
                 almostWhite: "#F3F3F3",
                 veryLightGrey: "hsl(0, 0%, 98%)",
                 auctionGreen: "#18c6a3",

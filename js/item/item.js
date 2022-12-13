@@ -1,10 +1,10 @@
 import { apiRequest } from "../tools/fetch.js";
 import { createElement } from "../tools/factory.js";
-import { counterContainer } from "../tools/timeCalc.js/countdown.js";
+import { counterContainer } from "../tools/timeCalc/countdown.js";
 import { carousell } from "./carousell.js";
 import { newBid } from "../forms/newBid.js";
 import { inputKeyup } from "./inputKeyEvent.js";
-import { timeGap } from "../tools/timeCalc.js/definitions.js";
+import { timeGap } from "../tools/timeCalc/definitions.js";
 import { backArrow } from "../tools/UI/backArrow.js";
 import { authCheck } from "../tools/authCheck.mjs";
 import {

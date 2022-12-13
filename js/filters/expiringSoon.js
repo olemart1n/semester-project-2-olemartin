@@ -1,9 +1,9 @@
 import { feedLayoutNr2 } from "../home/feed/feedLayoutNr2";
 import { apiRequest } from "../tools/fetch";
 import { expandImg } from "../home/feed/expandImg";
-import { timeGap } from "../tools/timeCalc.js/definitions";
-import { closeToExp } from "../tools/timeCalc.js/timeLeft";
-import { counterContainer } from "../tools/timeCalc.js/countdown";
+import { timeGap } from "../tools/timeCalc/definitions";
+import { closeToExp } from "../tools/timeCalc/timeLeft";
+import { counterContainer } from "../tools/timeCalc/countdown";
 const listingsContainer = document.querySelector("#listingsFeed");
 const h2Header = document.querySelector("#listingHeader");
 

@@ -5,6 +5,7 @@ export const endpoints = {
     login: "auth/login",
     account: "profiles/" + load("name") + "?_listings=true",
     listings: "listings",
+    profiles: "profiles",
 };
 export const { base } = endpoints;
 

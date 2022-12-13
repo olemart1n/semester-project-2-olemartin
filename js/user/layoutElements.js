@@ -1,5 +1,5 @@
 import { createElement } from "../tools/factory";
-import { timeGap } from "../tools/timeCalc.js/definitions.js";
+import { timeGap } from "../tools/timeCalc/definitions.js";
 // HEADER OF PAGE --------------------------------------------------------
 export const headerSection = createElement("div", {
     class: "w-full flex lg:w-2/4 md:w-3/4 self-center",

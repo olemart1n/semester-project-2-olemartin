@@ -1,6 +1,9 @@
 import { newBtn, expireSoonBtn, p, nav, nextBtn } from "./htmlElements";
+import { searchFocusOut } from "./serchFocusOut";
+import { searchFocus } from "./searchFocus";
 import { newest } from "./newest";
 import { expiringSoon } from "./expiringSoon";
+import { search } from "./search";
 const filterSection = document.querySelector("#filters");
 
 export const filter = () => {
@@ -22,4 +25,7 @@ export const filter = () => {
         e.currentTarget.classList.add("bg-auctionBlue");
         newBtn.classList.remove("bg-auctionBlue");
     });
+    searchFocus();
+    search();
+    // searchFocusOut();
 };

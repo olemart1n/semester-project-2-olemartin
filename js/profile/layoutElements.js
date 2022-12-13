@@ -1,6 +1,6 @@
 import { createElement } from "../tools/factory";
 import { itemForm } from "./entryInputs";
-import { timeGap } from "../tools/timeCalc.js/definitions.js";
+import { timeGap } from "../tools/timeCalc/definitions.js";
 import { deleteFunc } from "./delete";
 import { updateFunc } from "./update";
 // HEADER OF PAGE --------------------------------------------------------

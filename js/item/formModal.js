@@ -1,5 +1,5 @@
 import { createElement } from "../tools/factory";
-import { hourLeft, minutesLeft } from "../tools/timeCalc.js/timeLeft";
+import { hourLeft, minutesLeft } from "../tools/timeCalc/timeLeft";
 import { load } from "../storage";
 import { newBid } from "../forms/newBid";
 

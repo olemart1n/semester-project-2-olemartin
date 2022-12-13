@@ -10,7 +10,7 @@ export const updateFunc = (button) => {
     button.addEventListener("click", (e) => {
         e.stopImmediatePropagation();
         const closeBtn = createElement("i", {
-            class: "fa-solid fa-xmark fa-xl text-almostWhite absolute p-4 aspect-square right-0 top-0 h-7",
+            class: "fa-solid fa-xmark fa-xl text-almostWhite absolute p-4 aspect-square right-0 top-0 h-7 hover:bg-auctionGreen",
         });
         itemFormClone.append(closeBtn);
         itemFormClone.classList.remove("hidden");

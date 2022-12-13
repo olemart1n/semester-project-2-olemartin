@@ -1,7 +1,6 @@
 import { filter } from "./sortBy";
-
 export const filterRouter = () => {
-    if (document.querySelector("#listingsFeed")) {
+    if (!window.location.href.includes("authentication")) {
         filter();
     }
 };

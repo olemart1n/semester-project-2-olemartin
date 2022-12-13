@@ -38,5 +38,7 @@ const searchAPI = (e) => {
             renderUsers(users);
             console.log(data);
         });
+    } else {
+        byUserButton.remove();
     }
 };

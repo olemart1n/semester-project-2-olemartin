@@ -60,6 +60,7 @@ a:hover {
 }
 
 #searchUser {
+    display: none;
     display: flex;
     position: relative;
     place-content: center;
@@ -72,8 +73,13 @@ a:hover {
     height: auto;
     position: absolute;
     right: -50px;
+    border: none;
+    outline: none;
 }
-
+#searchUser:focus {
+    border: none;
+    outline: none;
+}
 body {
     margin: 0;
     min-width: 320px;

@@ -1,5 +1,5 @@
-import { apiRequest } from "../tools/fetch";
-import { endpoints, fetchOptions } from "../endpoints.mjs";
+import { apiRequest } from "../tools/fetch.js";
+import { endpoints, fetchOptions } from "../endpoints.js";
 const { login } = endpoints;
 const { registerLogin } = fetchOptions;
 const loginFunc = (email, password) => {

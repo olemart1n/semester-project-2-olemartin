@@ -1,29 +1,23 @@
 import { apiRequest } from "../tools/fetch.js";
-import { createElement } from "../tools/factory.js";
 import { counterContainer } from "../tools/timeCalc/countdown.js";
 import { carousell } from "./carousell.js";
-import { newBid } from "../forms/newBid.js";
 import { inputKeyup } from "./inputKeyEvent.js";
 import { timeGap } from "../tools/timeCalc/definitions.js";
 import { backArrow } from "../tools/UI/backArrow.js";
-import { authCheck } from "../tools/authCheck.mjs";
+import { authCheck } from "../tools/authCheck.js";
 import { viewBids } from "./allBidsEvent.js";
 import {
-    counterBox,
-    highestBid,
     leftSideText,
     rightSideText,
     bidInput,
     bidBtn,
     bidSection,
     bidLabel,
-    bidForm,
     mainDiv,
     slideContainer,
     title,
     seller,
     imageLabels,
-    itemDetails,
     descriptionText,
     descriptionTags,
     allBidsBtn,

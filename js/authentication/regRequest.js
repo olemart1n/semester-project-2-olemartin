@@ -1,6 +1,6 @@
-import { apiRequest } from "../tools/fetch";
-import { save } from "../storage/save";
-import { fetchOptions, endpoints } from "../endpoints.mjs";
+import { apiRequest } from "../tools/fetch.js";
+import { save } from "../storage/save.js";
+import { fetchOptions, endpoints } from "../endpoints.js";
 const { register, login } = endpoints;
 const { registerLogin } = fetchOptions;
 const registerForm = document.querySelector("#authenticateForms");

@@ -1,4 +1,4 @@
-import { fetchOptions, endpoints, base } from "../endpoints.mjs";
+import { fetchOptions, endpoints, base } from "../endpoints.js";
 const { deleteOpt } = fetchOptions;
 const { listings } = endpoints;
 export const deleteFunc = (button) => {

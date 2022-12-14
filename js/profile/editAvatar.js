@@ -1,9 +1,9 @@
-import { endpoints, fetchOptions } from "../endpoints.mjs";
+import { endpoints, fetchOptions } from "../endpoints.js";
 import { apiRequest } from "../tools/fetch.js";
 import { updateModal1 } from "./profile.js";
 import { avatarForm } from "./layoutElements.js";
 import { debounce } from "../tools/debounce.js";
-import { load, save, remove } from "../storage/index.js";
+import { save, remove } from "../storage/index.js";
 import { createElement } from "../tools/factory.js";
 const { editAvatar } = endpoints;
 const { update } = fetchOptions;

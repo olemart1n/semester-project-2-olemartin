@@ -1,4 +1,4 @@
-import { nav, byTagsButton, byTitleButton, byUserButton } from "./htmlElements";
+import { byTagsButton, byTitleButton, byUserButton } from "./htmlElements.js";
 const listingsFeed = document.querySelector("#listingsFeed");
 const resultsContainer = document.querySelector("#itemContainer");
 const searchForm = document.querySelector("#searchForm");

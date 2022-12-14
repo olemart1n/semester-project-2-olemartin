@@ -1,9 +1,9 @@
-import { feedLayoutNr2 } from "../home/feed/feedLayoutNr2";
-import { apiRequest } from "../tools/fetch";
-import { expandImg } from "../home/feed/expandImg";
-import { timeGap } from "../tools/timeCalc/definitions";
-import { closeToExp } from "../tools/timeCalc/timeLeft";
-import { counterContainer } from "../tools/timeCalc/countdown";
+import { feedLayoutNr2 } from "../home/feed/feedLayoutNr2.js";
+import { apiRequest } from "../tools/fetch.js";
+import { expandImg } from "../home/feed/expandImg.js";
+import { timeGap } from "../tools/timeCalc/definitions.js";
+import { closeToExp } from "../tools/timeCalc/timeLeft.js";
+import { counterContainer } from "../tools/timeCalc/countdown.js";
 const listingsContainer = document.querySelector("#listingsFeed");
 const h2Header = document.querySelector("#listingHeader");
 

@@ -1,8 +1,8 @@
-import { updateEntry } from "../forms/update";
-import { apiRequest } from "../tools/fetch";
-import { endpoints, fetchOptions } from "../endpoints.mjs";
-import { updateModal, itemFormClone } from "./profile";
-import { createElement } from "../tools/factory";
+import { updateEntry } from "../forms/update.js";
+import { apiRequest } from "../tools/fetch.js";
+import { endpoints, fetchOptions } from "../endpoints.js";
+import { updateModal, itemFormClone } from "./profile.js";
+import { createElement } from "../tools/factory.js";
 const { listings } = endpoints;
 const { getWithJwt } = fetchOptions;
 

@@ -1,14 +1,11 @@
 import { apiRequest } from "../tools/fetch.js";
 import { debounce } from "../tools/debounce.js";
-import { authCheck } from "../tools/authCheck.mjs";
-import { fetchOptions } from "../endpoints.mjs";
+import { authCheck } from "../tools/authCheck.js";
+import { fetchOptions } from "../endpoints.js";
 import { renderTitles, renderTags, renderUsers } from "./renderSearch.js";
-import { nav, byTagsButton, byTitleButton, byUserButton } from "./htmlElements";
+import { byUserButton } from "./htmlElements.js";
 const { getWithJwt } = fetchOptions;
-const listingsFeed = document.querySelector("#listingsFeed");
-const resultsContainer = document.querySelector("#itemContainer");
 const searchForm = document.querySelector("#searchForm");
-const navContainer = document.querySelector("#filters");
 export const search = () => {
     searchForm.addEventListener(
         "input",

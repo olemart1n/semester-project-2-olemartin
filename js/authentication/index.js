@@ -1,8 +1,8 @@
 import { authedNav } from "./authedNav.js";
 import { loginRequest } from "./loginRequest.js";
 import { registerNewAccount } from "./regRequest.js";
-import { authCheck } from "../tools/authCheck.mjs";
-import { toggleNav, toggleSearch } from "../tools/UI/nav.mjs";
+import { authCheck } from "../tools/authCheck.js";
+import { toggleNav, toggleSearch } from "../tools/UI/nav.js";
 
 const currentUrl = document.location.href;
 export const authenticationRouter = () => {

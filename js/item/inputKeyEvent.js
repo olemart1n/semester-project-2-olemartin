@@ -1,4 +1,4 @@
-import { expandForm } from "./formModal";
+import { expandForm } from "./formModal.js";
 export const inputKeyup = (input, currentBid, btn, title, endsAt, allBids, firstImg, itemId) => {
     input.addEventListener("keyup", (e) => {
         e.stopImmediatePropagation();

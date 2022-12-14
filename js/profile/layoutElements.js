@@ -1,10 +1,10 @@
-import { createElement } from "../tools/factory";
-import { itemForm } from "./entryInputs";
+import { createElement } from "../tools/factory.js";
+import { itemForm } from "./entryInputs.js";
 import { timeGap } from "../tools/timeCalc/definitions.js";
-import { deleteFunc } from "./delete";
-import { updateFunc } from "./update";
-import { changeAvatar } from "./editAvatar";
-import { load } from "../storage";
+import { deleteFunc } from "./delete.js";
+import { updateFunc } from "./update.js";
+import { changeAvatar } from "./editAvatar.js";
+import { load } from "../storage/index.js";
 // HEADER OF PAGE --------------------------------------------------------
 export const headerSection = createElement("div", {
     class: "w-full  lg:w-2/4 sm:w-3/4 self-center flex flex-wrap",

@@ -1,4 +1,4 @@
-import { endpoints, fetchOptions } from "../endpoints.mjs";
+import { endpoints, fetchOptions } from "../endpoints.js";
 import { apiRequest } from "../tools/fetch.js";
 const { update } = fetchOptions;
 const { listings } = endpoints;

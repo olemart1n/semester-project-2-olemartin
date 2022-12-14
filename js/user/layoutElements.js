@@ -1,4 +1,4 @@
-import { createElement } from "../tools/factory";
+import { createElement } from "../tools/factory.js";
 import { timeGap } from "../tools/timeCalc/definitions.js";
 // HEADER OF PAGE --------------------------------------------------------
 export const headerSection = createElement("div", {

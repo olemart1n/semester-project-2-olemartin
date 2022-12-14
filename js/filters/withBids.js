@@ -1,4 +1,4 @@
-import { apiRequest } from "../tools/fetch";
+import { apiRequest } from "../tools/fetch.js";
 
 export const withBids = async () => {
     await apiRequest("listings?_bids=true&sort=created&sortOrder=desc").then((data) => {

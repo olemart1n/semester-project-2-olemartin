@@ -1,7 +1,7 @@
-import { feedLayout } from "../home/feed/feedLayout";
-import { apiRequest } from "../tools/fetch";
-import { expandImg } from "../home/feed/expandImg";
-import { nextBtn } from "./htmlElements";
+import { feedLayout } from "../home/feed/feedLayout.js";
+import { apiRequest } from "../tools/fetch.js";
+import { expandImg } from "../home/feed/expandImg.js";
+import { nextBtn } from "./htmlElements.js";
 const listingsContainer = document.querySelector("#listingsFeed");
 const newBtn = document.querySelector("#filter-link-1");
 const h2Header = document.querySelector("#listingHeader");

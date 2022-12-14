@@ -1,5 +1,5 @@
-import { apiRequest } from "../tools/fetch";
-import { fetchOptions } from "../endpoints.mjs";
+import { apiRequest } from "../tools/fetch.js";
+import { fetchOptions } from "../endpoints.js";
 import {
     headerSection,
     userAvatar,
@@ -11,14 +11,11 @@ import {
     activeOrSold,
     allBidsContainer,
     bidContainer,
-} from "./layoutElements";
-import { backArrow } from "../tools/UI/backArrow";
-import { endOfQuery } from "../tools/query/endOfQuery";
+} from "./layoutElements.js";
+import { backArrow } from "../tools/UI/backArrow.js";
+import { endOfQuery } from "../tools/query/endOfQuery.js";
 
 const userContainer = document.querySelector("#itemContainer");
-const listingFeed = document.querySelector("#listingsFeed");
-const mainTag = document.querySelector("main");
-const filters = document.querySelector("#filters");
 const h2Header = document.querySelector("#listingHeader");
 const { getWithJwt } = fetchOptions;
 export const renderUser = () => {

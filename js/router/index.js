@@ -2,7 +2,7 @@ import { renderWithBids } from "../home/feed/listings.js";
 import { renderItem } from "../item/item.js";
 import { renderProfile } from "../profile/profile.js";
 import { renderUser } from "../user/index.js";
-import { authCheck } from "../tools/authCheck.mjs";
+import { authCheck } from "../tools/authCheck.js";
 
 export const homeRouter = () => {
     if (document.location.href.includes("item")) {

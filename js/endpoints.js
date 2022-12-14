@@ -1,4 +1,4 @@
-import { load } from "./storage/index";
+import { load } from "./storage/index.js";
 export const endpoints = {
     base: "https://api.noroff.dev/api/v1/auction/",
     register: "auth/register",

@@ -1,9 +1,9 @@
-import { createElement } from "../tools/factory";
-import { apiRequest } from "../tools/fetch";
-import { endpoints, fetchOptions } from "../endpoints.mjs";
-import { createEntry } from "../forms/entry";
-import { itemForm } from "./entryInputs";
-import { refresh } from "./clickEvents";
+import { createElement } from "../tools/factory.js";
+import { apiRequest } from "../tools/fetch.js";
+import { endpoints, fetchOptions } from "../endpoints.js";
+import { createEntry } from "../forms/entry.js";
+import { itemForm } from "./entryInputs.js";
+import { refresh } from "./clickEvents.js";
 import {
     profileAvatar,
     profileName,
@@ -17,11 +17,9 @@ import {
     activeBtn,
     allBtn,
     checkActive,
-    editAvatarBbt,
-} from "./layoutElements";
+} from "./layoutElements.js";
 const { account } = endpoints;
 const { getWithJwt } = fetchOptions;
-const main = document.querySelector("main");
 const listingHeader = document.querySelector("#listingHeader");
 const userContainer = document.querySelector("#itemContainer");
 const subUserContainer = createElement("div", { class: "" });

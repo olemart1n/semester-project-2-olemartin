@@ -1,6 +1,6 @@
-import { endpoints, fetchOptions } from "../endpoints.mjs";
+import { fetchOptions } from "../endpoints.js";
 import { apiRequest } from "../tools/fetch.js";
-import { load, remove, save } from "../storage/index";
+import { load, save } from "../storage/index.js";
 const { entry } = fetchOptions;
 export const newBid = (inputs, itemId) => {
     const form = new FormData(inputs.currentTarget);

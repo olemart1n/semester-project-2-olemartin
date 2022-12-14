@@ -1,9 +1,8 @@
-import { newBtn, expireSoonBtn, p, nav, nextBtn } from "./htmlElements";
-import { searchFocusOut } from "./serchFocusOut";
-import { searchFocus } from "./searchFocus";
-import { newest } from "./newest";
-import { expiringSoon } from "./expiringSoon";
-import { search } from "./search";
+import { newBtn, expireSoonBtn, p, nav, nextBtn } from "./htmlElements.js";
+import { searchFocus } from "./searchFocus.js";
+import { newest } from "./newest.js";
+import { expiringSoon } from "./expiringSoon.js";
+import { search } from "./search.js";
 const filterSection = document.querySelector("#filters");
 
 export const filter = () => {

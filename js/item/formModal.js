@@ -1,7 +1,7 @@
-import { createElement } from "../tools/factory";
-import { hourLeft, minutesLeft } from "../tools/timeCalc/timeLeft";
-import { load } from "../storage";
-import { newBid } from "../forms/newBid";
+import { createElement } from "../tools/factory.js";
+import { minutesLeft } from "../tools/timeCalc/timeLeft.js";
+import { load } from "../storage/index.js";
+import { newBid } from "../forms/newBid.js";
 
 export const expandForm = (btn, title, bid, endsAt, allBids, firstImg, itemId) => {
     btn.addEventListener("click", (e) => {

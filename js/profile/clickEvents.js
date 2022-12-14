@@ -1,4 +1,4 @@
-import { activeOrSold } from "./layoutElements";
+import { activeOrSold } from "./layoutElements.js";
 export const refresh = (container, maincontainer, active, iterationEl) => {
     container.remove();
     container.innerHTML = "";

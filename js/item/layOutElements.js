@@ -1,4 +1,4 @@
-import { createElement } from "../tools/factory";
+import { createElement } from "../tools/factory.js";
 
 export const counterBox = createElement("div", {
     class: "counterBox w-full grid grid-cols-3  my-5 p-0",

@@ -1,5 +1,5 @@
-import { createElement } from "../tools/factory";
-import { timeGap } from "../tools/timeCalc/definitions";
+import { createElement } from "../tools/factory.js";
+import { timeGap } from "../tools/timeCalc/definitions.js";
 
 export const newBtn = createElement("button", {
     class: "text-almostWhite bg-logoBg w-1/4  rounded-none px-1 border-none mx-auto w-30 enabled:hover:outline-none",

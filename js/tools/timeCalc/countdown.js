@@ -1,6 +1,6 @@
-import { createElement } from "../factory";
-import { timeGap } from "./definitions";
-import { hour, day, min, sec } from "./definitions";
+import { createElement } from "../factory.js";
+import { timeGap } from "./definitions.js";
+import { hour, day, min, sec } from "./definitions.js";
 
 export const counterContainer = (element, endsAt) => {
     const counterSection = document.querySelector(".counterBox" + element);

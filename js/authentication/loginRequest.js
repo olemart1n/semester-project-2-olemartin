@@ -1,5 +1,5 @@
-import { apiRequest } from "../tools/fetch";
-import { fetchOptions, endpoints } from "../endpoints.mjs";
+import { apiRequest } from "../tools/fetch.js";
+import { fetchOptions, endpoints } from "../endpoints.js";
 import { save } from "../storage/save.js";
 const { login } = endpoints;
 const { registerLogin } = fetchOptions;

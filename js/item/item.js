@@ -7,6 +7,7 @@ import { inputKeyup } from "./inputKeyEvent.js";
 import { timeGap } from "../tools/timeCalc/definitions.js";
 import { backArrow } from "../tools/UI/backArrow.js";
 import { authCheck } from "../tools/authCheck.mjs";
+import { viewBids } from "./allBidsEvent.js";
 import {
     counterBox,
     highestBid,
@@ -25,6 +26,8 @@ import {
     itemDetails,
     descriptionText,
     descriptionTags,
+    allBidsBtn,
+    allBids,
 } from "./layOutElements.js";
 const itemContainer = document.querySelector("#itemContainer");
 const listingFeed = document.querySelector("#listingsFeed");
@@ -65,7 +68,7 @@ export const renderItem = () => {
         if (currentTimeGap > 0) {
             counterContainer("", endsAt);
         }
-        leftSideText.innerHTML = "Highest bid so far";
+        leftSideText.innerHTML = "Highest bid";
         if (data.bids.length > 0) {
             rightSideText.innerHTML =
                 data.bids[data.bids.length - 1].bidderName +
@@ -95,5 +98,7 @@ export const renderItem = () => {
         } else {
             bidLabel.innerHTML = "log in to bid";
         }
+        console.log(data);
+        viewBids(allBidsBtn, allBids, data.bids);
     });
 };

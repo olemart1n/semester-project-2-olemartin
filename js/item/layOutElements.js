@@ -4,15 +4,23 @@ export const counterBox = createElement("div", {
     class: "counterBox w-full grid grid-cols-3  my-5 p-0",
 });
 
-// -- --
+// -- -- GREEN SECTION
 export const leftSideText = createElement("p", { class: "text-auctionGrey" });
 export const rightSideText = createElement("p", { class: "text-auctionGrey" });
-
 export const highestBid = createElement("div", {
-    class: "w-full bg-green-200 flex justify-around md:w-3/4 mx-auto my-2   ",
+    class: "w-full bg-green-200 flex justify-around md:w-3/4 mx-auto my-2  flex-wrap ",
 });
 highestBid.append(leftSideText, rightSideText);
 
+// ALL BIDS BUTTON AND SECTION
+export const allBidsBtn = createElement("button", {
+    class: "px-1 mx-auto text-auctionGrey rounded-sm text-sm bg-auctionYellow",
+});
+allBidsBtn.innerHTML = "View all bids &darr;";
+export const allBids = createElement("div", {
+    class: "text-auctionGrey w-full hidden bg-auctionYellow",
+    id: "bid-section",
+});
 // FORM
 export const bidInput = createElement("input", {
     id: "bidInput",
@@ -92,6 +100,8 @@ itemDetails.append(
     slideContainer,
     counterBox,
     highestBid,
+    allBidsBtn,
+    allBids,
     bidForm,
     description
 );

@@ -59,7 +59,7 @@ export const renderItem = () => {
         const endsAt = data.endsAt;
         title.innerHTML = data.title;
         if (authCheck()) {
-            seller.innerHTML = `<a href="../user/${data.seller.name}"><span class="text-auctionGrey">seller: </span>${data.seller.name}</a>`;
+            seller.innerHTML = `<a href="../user/${data.seller.name}"><span class="text-auctionGrey">seller: </span class="font-bold text-lg">${data.seller.name}</a>`;
         } else {
             seller.innerHTML = `<a href="#">${data.seller.name} <span class="text-auctionGrey">(log in to visit ) </span></a>`;
         }

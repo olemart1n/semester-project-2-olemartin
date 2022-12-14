@@ -18,9 +18,9 @@
       </div>
       <div class="hidden md:flex sm-w-auto w-full items-center md:relative absolute top-16 md:top-auto"
         id="navWithSearch">
-        <form action="" method="get" class="flex items-center" id="searchForm">
-          <input class="text-black border border-logoBg py-1" minlength="3" type="search" name="search" id="searchInput"
-            placeholder="search">
+        <form action="" method="get" class="flex items-center place-content-center mx-auto" id="searchForm">
+          <input class="text-black text-lg border rounded border-logoBg md:py-2 md:text-center" minlength="3"
+            type="search" name="search" id="searchInput" placeholder="search">
           <!-- <button class="bg-auctionGrey p-1 ml-1 rounded-sm text-almostWhite">search</button> -->
         </form>
       </div>
@@ -45,7 +45,7 @@
     </div>
 
   </nav>
-  <main class="bg-auctionBg">
+  <main class="bg-auctionBg min-h-screen">
     <div class="hidden md:block md:columns-2 md:w-full md:bg-auctionInput bg-almostWhite pt-10 md:pt-1 md:p-1"
       id="filters">
     </div>
@@ -55,6 +55,11 @@
     <div class="flex flex-col md:w-5/6 w-full m-auto p-3" id="itemContainer">
     </div>
   </main>
+  <footer class="max-h-20 mt-auto">
+    <div class="flex place-content-center ">
+      <h5 class="text-logoBg">This frontend is developed by Ole M</h5>
+    </div>
+  </footer>
   <script type="module" src="/main.js"></script>
 </body>
 

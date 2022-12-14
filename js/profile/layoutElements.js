@@ -3,6 +3,8 @@ import { itemForm } from "./entryInputs";
 import { timeGap } from "../tools/timeCalc/definitions.js";
 import { deleteFunc } from "./delete";
 import { updateFunc } from "./update";
+import { changeAvatar } from "./editAvatar";
+import { load } from "../storage";
 // HEADER OF PAGE --------------------------------------------------------
 export const headerSection = createElement("div", {
     class: "w-full  lg:w-2/4 sm:w-3/4 self-center flex flex-wrap",
@@ -13,15 +15,20 @@ export const profileAvatar = createElement("img", {
 });
 // DETAILS; MAIL CREDITS NAME ETC
 export const profileDetails = createElement("div", {
-    class: "w-2/3 sm:w-1/2 text-auctionGrey sm:grid sm:grid-rows-3 p-2",
+    class: "w-2/3 sm:w-1/2 text-auctionGrey sm:grid sm:grid-rows-4 p-2",
 });
 export const profileName = createElement("h2", {
     class: " text-auctionGrey text-xl ",
 });
+export const editAvatarBbt = createElement("button", {
+    class: "border bg-auctionGrey text-almostWhite h-8 m-0 text-sm w-1/2 self-end",
+});
+editAvatarBbt.innerHTML = "Edit avatar";
+changeAvatar(editAvatarBbt);
 export const profileEmail = createElement("p", { class: " text-auctionGrey" });
 export const profileCredits = createElement("p", { class: " text-auctionGrey" });
 
-profileDetails.append(profileName, profileEmail, profileCredits);
+profileDetails.append(profileName, profileEmail, profileCredits, editAvatarBbt);
 
 // ADD-LISTING BUTTON ----------
 const createListingContainer = createElement("div", { class: "w-full   my-5" });
@@ -108,3 +115,29 @@ export const checkActive = (data) => {
     }
     return true;
 };
+
+// CHANGE AVATAR FORM
+export const avatarForm = createElement("form", {
+    id: "avatarForm",
+    class: "w-2/3 h-2/3 rounded-sm bg-logoBg flex flex-col align-items-center relative",
+});
+const media = createElement("input", {
+    class: " bg-almostWhite my-2 rounded p-1 text-black ",
+    type: "url",
+    name: "media",
+    id: "avatarInput",
+    placeholder: "avatar URL",
+});
+const submitButton = createElement("button", {
+    type: "submit",
+    class: "bg-auctionBlue rounded-none w-40 mx-auto my-5",
+});
+submitButton.innerHTML = "Update";
+
+const avatarImg = createElement("img", {
+    class: "w-1/2 rounded-lg m-2",
+    name: "avatar",
+});
+avatarImg.src = load("avatar");
+
+avatarForm.append(avatarImg, media, submitButton);

@@ -17,6 +17,7 @@ import {
     activeBtn,
     allBtn,
     checkActive,
+    editAvatarBbt,
 } from "./layoutElements";
 const { account } = endpoints;
 const { getWithJwt } = fetchOptions;
@@ -28,8 +29,9 @@ const subUserContainer = createElement("div", { class: "" });
 export const updateModal = createElement("div", { class: "w-full aspect-square hidden" });
 export const itemFormClone = itemForm.cloneNode(true);
 //
+export const updateModal1 = createElement("div", { class: "w-full aspect-square hidden" });
 export const renderProfile = async () => {
-    document.body.append(updateModal);
+    document.body.append(updateModal, updateModal1);
     userContainer.classList.add("min-h-screen");
     document.title = `Profile | AuctionHouse`;
     listingHeader.innerHTML = "Your details";

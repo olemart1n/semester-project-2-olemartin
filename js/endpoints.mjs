@@ -6,6 +6,7 @@ export const endpoints = {
     account: "profiles/" + load("name") + "?_listings=true",
     listings: "listings",
     profiles: "profiles",
+    editAvatar: "profiles/" + load("name") + "/media",
 };
 export const { base } = endpoints;
 

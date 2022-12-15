@@ -77,5 +77,8 @@ export const renderProfile = async () => {
     itemForm.addEventListener("submit", (e) => {
         e.preventDefault();
         createEntry(e);
+        setTimeout(() => {
+            document.location.replace("/semester-project-2-olemartin/");
+        }, 500);
     });
 };

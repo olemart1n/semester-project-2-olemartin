@@ -47,7 +47,7 @@ export const updateFunc = (button) => {
             e.preventDefault();
             updateEntry(e, button.id);
             setTimeout(() => {
-                window.location.reload();
+                document.location.replace("/semester-project-2-olemartin/");
             }, 1000);
         });
     });

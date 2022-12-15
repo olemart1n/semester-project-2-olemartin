@@ -1,6 +1,6 @@
 import { apiRequest } from "../tools/fetch.js";
 import { fetchOptions, endpoints } from "../endpoints.js";
-import { save } from "../storage/save.js";
+import { save, refreshKey } from "../storage/index.js";
 import { form, successAlert, warningAlert } from "./formElements.js";
 const { login } = endpoints;
 const { registerLogin } = fetchOptions;
@@ -21,8 +21,9 @@ export const loginRequest = () => {
                 save("credits", credits);
                 save("email", email);
                 save("avatar", avatar);
+                refreshKey("/semester-project-2-olemartin/");
                 setTimeout(() => {
-                    window.location.replace("/semester-project-2-olemartin/feed");
+                    window.location.replace("/semester-project-2-olemartin/");
                 }, 2000);
             } else if (data.statusCode === 401) {
                 warningAlert.classList.remove("hidden");

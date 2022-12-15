@@ -14,14 +14,18 @@ import {
 } from "./layoutElements.js";
 import { backArrow } from "../tools/UI/backArrow.js";
 import { endOfQuery } from "../tools/query/endOfQuery.js";
+import { load } from "../storage/load.js";
 
 const userContainer = document.querySelector("#itemContainer");
 const h2Header = document.querySelector("#listingHeader");
 const { getWithJwt } = fetchOptions;
 export const renderUser = () => {
     backArrow(h2Header);
-    const listingsFetch = `profiles/${endOfQuery()}?_listings=true `;
-    const bidsFetch = `profiles/${endOfQuery()}/bids?_listings=true`;
+    const userId = load("location").substring(5);
+    const listingsFetch = `profiles/${userId}?_listings=true `;
+    const bidsFetch = `profiles/${userId}/bids?_listings=true`;
+    // const listingsFetch = `profiles/${endOfQuery()}?_listings=true `;
+    // const bidsFetch = `profiles/${endOfQuery()}/bids?_listings=true`;
     userContainer.append(headerSection, allItemsContinaer, allBidsContainer);
     apiRequest(listingsFetch, getWithJwt).then((data) => {
         userAvatar.src = data.avatar;
@@ -40,18 +44,19 @@ export const renderUser = () => {
         });
     });
     apiRequest(bidsFetch, getWithJwt).then((data) => {
-        console.log(data);
-        subHeader2.innerHTML = data[0].bidderName + " made bid's on these listings";
-        data.forEach((element) => {
-            allBidsContainer.insertAdjacentElement(
-                "beforeend",
-                bidContainer(
-                    `/semester-project-2-olemartin/item?id=${element.listing.id}`,
-                    element.listing.title,
-                    activeOrSold(element.listing.endsAt)
-                )
-            );
-        });
+        if (data.length > 0) {
+            subHeader2.innerHTML = data[0].bidderName + " made bid's on these listings";
+            data.forEach((element) => {
+                allBidsContainer.insertAdjacentElement(
+                    "beforeend",
+                    bidContainer(
+                        `/semester-project-2-olemartin/item?id=${element.listing.id}`,
+                        element.listing.title,
+                        activeOrSold(element.listing.endsAt)
+                    )
+                );
+            });
+        }
     });
 };
 

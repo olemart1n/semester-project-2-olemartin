@@ -6,6 +6,7 @@ import { timeGap } from "../tools/timeCalc/definitions.js";
 import { backArrow } from "../tools/UI/backArrow.js";
 import { authCheck } from "../tools/authCheck.js";
 import { viewBids } from "./allBidsEvent.js";
+import { load } from "../storage/load.js";
 import {
     leftSideText,
     rightSideText,
@@ -31,12 +32,14 @@ const h2Header = document.querySelector("#listingHeader");
 
 export const renderItem = () => {
     listingFeed.innerHTML = "";
+    itemContainer.innerHTML = "";
     h2Header.innerHTML = "";
     filters.remove();
     document.title = `Item | AuctionHouse`;
     mainTag.classList.remove("bg-auctionBg");
-    const queryString = document.location.search;
-    const id = new URLSearchParams(queryString).get("id");
+    // const queryString = document.location.search;
+    // const id = new URLSearchParams(queryString).get("id");
+    const id = load("location").substring(8);
     const spesificItem = `listings/${id}?_seller=true&_bids=true`;
     backArrow(h2Header);
 
@@ -53,7 +56,7 @@ export const renderItem = () => {
         const endsAt = data.endsAt;
         title.innerHTML = data.title;
         if (authCheck()) {
-            seller.innerHTML = `<a href="/semester-project-2-olemartin/user/${data.seller.name}"><span class="text-auctionGrey">seller: </span class="font-bold text-lg">${data.seller.name}</a>`;
+            seller.innerHTML = `<a href="/semester-project-2-olemartin/user?${data.seller.name}"><span class="text-auctionGrey">seller: </span class="font-bold text-lg">${data.seller.name}</a>`;
         } else {
             seller.innerHTML = `<a href="#">${data.seller.name} <span class="text-auctionGrey">(log in to visit ) </span></a>`;
         }
@@ -92,7 +95,6 @@ export const renderItem = () => {
         } else {
             bidLabel.innerHTML = "log in to bid";
         }
-        console.log(data);
         viewBids(allBidsBtn, allBids, data.bids);
     });
 };

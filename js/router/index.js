@@ -3,19 +3,16 @@ import { renderItem } from "../item/item.js";
 import { renderProfile } from "../profile/profile.js";
 import { renderUser } from "../user/index.js";
 import { authCheck } from "../tools/authCheck.js";
+import { load } from "../storage/index.js";
 
 export const homeRouter = () => {
-    if (document.location.href.includes("item")) {
+    if (load("location").includes("item")) {
         renderItem();
-    } else if (document.location.href.includes("user") && authCheck()) {
+    } else if (load("location").includes("user") && authCheck()) {
         renderUser();
-    } else if (document.location.href.includes("home")) {
+    } else if (load("location").includes("home")) {
         renderProfile();
-    } else if (
-        document.querySelector("#listingsFeed") &&
-        !document.location.href.includes("login") &&
-        !document.location.href.includes("register")
-    ) {
+    } else if (document.querySelector("#listingsFeed") && load("location").includes("semester")) {
         renderWithBids();
     }
 };

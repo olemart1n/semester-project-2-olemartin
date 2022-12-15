@@ -39,7 +39,7 @@ export const changeAvatar = (btn) => {
                 remove("avatar");
                 save("avatar", data.avatar);
                 setTimeout(() => {
-                    window.location.reload();
+                    document.location.replace("/semester-project-2-olemartin/");
                 }, 1000);
             });
         });

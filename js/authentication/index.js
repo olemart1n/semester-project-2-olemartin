@@ -5,7 +5,7 @@ import { authCheck } from "../tools/authCheck.js";
 import { toggleNav, toggleSearch } from "../tools/UI/nav.js";
 import { renderLoginPage } from "./renderLoginPage.js";
 import { renderRegPage } from "./renderRegPage.js";
-const currentUrl = document.location.href;
+const currentUrl = window.location.href;
 export const authenticationRouter = () => {
     if (currentUrl.includes("login")) {
         renderLoginPage();

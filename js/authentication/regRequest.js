@@ -1,6 +1,6 @@
 import { apiRequest } from "../tools/fetch.js";
 import { regForm, regSuccessAlert, regWarningAlert } from "./formElements.js";
-import { save } from "../storage/save.js";
+import { save, refreshKey } from "../storage/index.js";
 import { fetchOptions, endpoints } from "../endpoints.js";
 const { register, login } = endpoints;
 const { registerLogin } = fetchOptions;
@@ -25,8 +25,9 @@ export const registerNewAccount = () => {
                         save("credits", credits);
                         save("email", email);
                         save("avatar", avatar);
+                        refreshKey("/semester-project-2-olemartin/");
                         setTimeout(() => {
-                            window.location.replace("/semester-project-2-olemartin/feed");
+                            window.location.replace("/semester-project-2-olemartin/");
                         }, 2000);
                     });
                 }, 2000);

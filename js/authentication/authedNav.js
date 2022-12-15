@@ -5,7 +5,7 @@ export const authedNav = () => {
     linkOne.textContent = "Profile";
     linkOne.href = "/semester-project-2-olemartin/home";
     linkTwo.addEventListener("click", () => localStorage.clear());
-    linkTwo.href = "./";
+    linkTwo.href = "/semester-project-2-olemartin/";
     linkTwo.textContent = "Logout";
     document.title = "Feed | AuctionHouse";
 };

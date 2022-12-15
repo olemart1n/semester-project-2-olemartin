@@ -22,7 +22,6 @@ export const expandForm = (btn, title, bid, endsAt, allBids, firstImg, itemId) =
         input.value = bid;
         closeBtn.addEventListener("click", () => {
             document.querySelector(".modal").remove();
-            window.location.reload();
         });
         document.getElementById("modalSubmit").addEventListener("submit", (e) => {
             e.preventDefault();
@@ -31,7 +30,7 @@ export const expandForm = (btn, title, bid, endsAt, allBids, firstImg, itemId) =
             submitBtn.classList.remove("bg-orange-300");
             submitBtn.classList.add("bg-green-200");
             setTimeout(() => {
-                window.location.reload();
+                document.location.replace("/semester-project-2-olemartin/");
             }, 1500);
         });
     });

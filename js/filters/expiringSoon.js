@@ -1,6 +1,6 @@
-import { feedLayoutNr2 } from "../home/feed/feedLayoutNr2.js";
+import { feedLayoutNr2 } from "../feed/feedLayoutNr2.js";
 import { apiRequest } from "../tools/fetch.js";
-import { expandImg } from "../home/feed/expandImg.js";
+import { expandImg } from "../feed/expandImg.js";
 import { timeGap } from "../tools/timeCalc/definitions.js";
 import { closeToExp } from "../tools/timeCalc/timeLeft.js";
 import { counterContainer } from "../tools/timeCalc/countdown.js";

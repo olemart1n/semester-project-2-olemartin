@@ -1,4 +1,4 @@
-import { renderWithBids } from "../home/feed/listings.js";
+import { renderWithBids } from "../feed/listings.js";
 import { renderItem } from "../item/item.js";
 import { renderProfile } from "../profile/profile.js";
 import { renderUser } from "../user/index.js";

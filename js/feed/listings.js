@@ -1,4 +1,4 @@
-import { apiRequest } from "../../tools/fetch.js";
+import { apiRequest } from "../tools/fetch.js";
 import { expandImg } from "./expandImg.js";
 import { feedLayout } from "./feedLayout.js";
 

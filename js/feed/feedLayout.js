@@ -1,4 +1,4 @@
-import { hourLeft } from "../../tools/timeCalc/timeLeft.js";
+import { hourLeft } from "../tools/timeCalc/timeLeft.js";
 export const feedLayout = (element) => {
     return `
   <div

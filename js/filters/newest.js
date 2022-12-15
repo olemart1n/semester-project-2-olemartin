@@ -1,6 +1,6 @@
-import { feedLayout } from "../home/feed/feedLayout.js";
+import { feedLayout } from "../feed/feedLayout.js";
 import { apiRequest } from "../tools/fetch.js";
-import { expandImg } from "../home/feed/expandImg.js";
+import { expandImg } from "../feed/expandImg.js";
 import { nextBtn } from "./htmlElements.js";
 const listingsContainer = document.querySelector("#listingsFeed");
 const newBtn = document.querySelector("#filter-link-1");

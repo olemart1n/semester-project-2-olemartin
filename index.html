@@ -1,13 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite App</title>
-  </head>
-  <body>
-    <div id="app"></div>
-    <script type="module" src="/main.js"></script>
-  </body>
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="https://kit.fontawesome.com/91d90be639.js" crossorigin="anonymous"></script>
+  <title>Listed Items | AuctionHouse</title>
+</head>
+
+<body>
+  <nav class="relative containers p-6 bg-almostWhite">
+    <div class="flex items-center justify-between flex-wrap md:grid md:grid-cols-3 relative">
+      <div class="md:hidden" id="zoomglass">
+        <i class="fa-solid fa-magnifying-glass text-logoBg fa-xl"></i>
+      </div>
+      <div class="hidden md:flex sm-w-auto w-full items-center md:relative absolute top-16 md:top-auto"
+        id="navWithSearch">
+        <form action="" method="get" class="flex items-center place-content-center mx-auto" id="searchForm">
+          <input class="text-black text-lg border rounded border-logoBg md:py-2 md:text-center" minlength="3"
+            type="search" name="search" id="searchInput" placeholder="search">
+        </form>
+      </div>
+      <div class="lg:p-2 mx-auto justify-center">
+        <a href="/">
+          <h1 class="bg-logoBg text-almostWhite font-light px-3 py-2 shrink">AuctionHouse</h1>
+        </a>
+      </div>
+      <div class="sm:hidden" id="bar">
+        <i class="fa-solid fa-bars fa-lg text-logoBg"></i>
+      </div>
+      <div class="sm:flex p-3 sm:p-0 sm:space-x-9 sm:w-auto items-center justify-between mx-auto w-full hidden"
+        id="navWithBar">
+        <div class="">
+          <a href="./login" class="text-logoBg" id="nav-link-1">Login</a>
+        </div>
+        <div class="">
+          <a href="./register" class="text-logoBg" id="nav-link-2">Create account</a>
+        </div>
+      </div>
+    </div>
+
+  </nav>
+  <main class="bg-auctionBg min-h-screen">
+    <div class="hidden md:block md:columns-2 md:w-full md:bg-auctionInput bg-almostWhite pt-10 md:pt-1 md:p-1"
+      id="filters">
+    </div>
+    <h2 class="left-40 text-logoBg text-lg p-3 font-bold" id="listingHeader">Popular listings</h2>
+    <div class="flex flex-col mx-5 md:w-2/3 md:mx-auto sm:grid sm:gap-4 sm:grid-cols-2" id="listingsFeed">
+    </div>
+    <div class="flex flex-col md:w-5/6 w-full m-auto p-3" id="itemContainer">
+    </div>
+  </main>
+  <footer class="max-h-20 mt-auto">
+    <div class="flex place-content-center ">
+      <h5 class="text-logoBg">This frontend is developed by Ole Martin</h5>
+    </div>
+  </footer>
+  <script type="module" src="/main.js"></script>
+</body>
+
 </html>

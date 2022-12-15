@@ -7,20 +7,52 @@
     line-height: 24px;
     font-weight: 400;
 
-    color-scheme: light dark;
     color: rgba(255, 255, 255, 0.87);
-    background-color: #242424;
 
     font-synthesis: none;
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     -webkit-text-size-adjust: 100%;
+    background-color: #c3c4b6c5;
+}
+input:focus {
+    outline-style: none;
+    border-radius: 0;
+}
+.modal {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    max-width: 1500px;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.833);
+    animation: zoom 0.2s ease-in;
 }
 
+@keyframes zoom {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+.modal img {
+    width: 80%;
+    object-fit: contain;
+    height: 80%;
+    align-self: center;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
 a {
     font-weight: 500;
-    color: #646cff;
+    color: #6486ff;
     text-decoration: inherit;
 }
 a:hover {
@@ -29,52 +61,31 @@ a:hover {
 
 body {
     margin: 0;
-    display: flex;
-    place-items: center;
     min-width: 320px;
     min-height: 100vh;
+    max-width: 1500px;
+    margin: auto;
+    position: relative;
 }
 
+/* main {
+    min-height: 100vh;
+} */
+
 h1 {
-    font-size: 3.2em;
+    font-size: 2.7em;
     line-height: 1.1;
 }
 
-#app {
-    max-width: 1280px;
-    margin: 0 auto;
-    padding: 2rem;
-    text-align: center;
-}
-
 .logo {
-    height: 6em;
-    padding: 1.5em;
     will-change: filter;
 }
 .logo:hover {
-    filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.vanilla:hover {
-    filter: drop-shadow(0 0 2em #f7df1eaa);
-}
-
-.card {
-    padding: 2em;
-}
-
-.read-the-docs {
-    color: #888;
+    filter: drop-shadow(0 0 3px #0f0419aa);
 }
 
 button {
     border-radius: 8px;
-    border: 1px solid transparent;
-    padding: 0.6em 1.2em;
-    font-size: 1em;
-    font-weight: 500;
-    font-family: inherit;
-    background-color: #1a1a1a;
     cursor: pointer;
     transition: border-color 0.25s;
 }
@@ -86,15 +97,13 @@ button:focus-visible {
     outline: 4px auto -webkit-focus-ring-color;
 }
 
-@media (prefers-color-scheme: light) {
-    :root {
-        color: #213547;
-        background-color: #ffffff;
+@media (max-width: 900px) {
+    h1 {
+        font-size: 2em;
     }
-    a:hover {
-        color: #747bff;
-    }
-    button {
-        background-color: #f9f9f9;
+}
+@media (max-width: 400px) {
+    h1 {
+        font-size: 1.2em;
     }
 }

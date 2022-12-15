@@ -14,11 +14,11 @@ highestBid.append(leftSideText, rightSideText);
 
 // ALL BIDS BUTTON AND SECTION
 export const allBidsBtn = createElement("button", {
-    class: "px-1 mx-auto text-auctionGrey rounded-sm text-sm bg-auctionYellow",
+    class: "px-1 mx-auto text-auctionGrey rounded-sm text-sm bg-auctionYellow mx-auto",
 });
 allBidsBtn.innerHTML = "View all bids &darr;";
 export const allBids = createElement("div", {
-    class: "text-auctionGrey w-full hidden bg-auctionYellow",
+    class: "text-auctionGrey w-full hidden bg-auctionYellow w-1/2 mx-auto",
     id: "bid-section",
 });
 // FORM
@@ -45,7 +45,7 @@ export const bidLabel = createElement("label", {
 bidLabel.textContent = "Place a bid";
 // THE FORM (both appended)
 export const bidForm = createElement("div", {
-    class: "bg-auctionBlue bg-opacity-50 md:w-4/5 mx-auto flex my-2 p-1",
+    class: "bg-auctionBlue w-full bg-opacity-50 md:w-3/4 mx-auto flex my-2 p-1",
 });
 
 export const mainDiv = createElement("div", {
@@ -70,7 +70,7 @@ const imageLabelsHeader = createElement("small", {
 imageLabelsHeader.innerHTML = "images";
 imageLabels.append(imageLabelsHeader);
 export const itemDetails = createElement("div", {
-    class: "bg-white p-5 mx-auto   md:w-4/5 border border-auctionBrown rounded-lg drop-shadow-sm my-10",
+    class: "bg-white p-5 mx-auto flex flex-col   md:w-4/5 border border-auctionBrown rounded-lg drop-shadow-sm my-10",
 });
 mainDiv.append(seller, itemDetails);
 

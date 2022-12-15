@@ -1,13 +1,12 @@
 import { apiRequest } from "../tools/fetch.js";
+import { regForm, regSuccessAlert, regWarningAlert } from "./formElements.js";
 import { save } from "../storage/save.js";
 import { fetchOptions, endpoints } from "../endpoints.js";
 const { register, login } = endpoints;
 const { registerLogin } = fetchOptions;
-const registerForm = document.querySelector("#authenticateForms");
-const successMessage = document.querySelector("#register-success-message");
-const errorMessage = document.querySelector("#register-error-message");
+
 export const registerNewAccount = () => {
-    registerForm.addEventListener("submit", (e) => {
+    regForm.addEventListener("submit", (e) => {
         e.preventDefault();
         const form = new FormData(e.currentTarget);
         const inputs = Object.fromEntries(form.entries());
@@ -17,7 +16,7 @@ export const registerNewAccount = () => {
         apiRequest(register, registerLogin).then((data) => {
             if (data.name === name) {
                 console.log(data);
-                successMessage.classList.remove("hidden");
+                regSuccessAlert.classList.remove("hidden");
                 setTimeout(() => {
                     apiRequest(login, registerLogin).then((data) => {
                         const { name, email, credits, avatar, accessToken } = data;
@@ -32,8 +31,8 @@ export const registerNewAccount = () => {
                     });
                 }, 2000);
             } else if (data.status === "Bad Request") {
-                errorMessage.classList.remove("hidden");
-                errorMessage.textContent = data.errors[0].message;
+                regWarningAlert.classList.remove("hidden");
+                regWarningAlert.textContent = data.errors[0].message;
             }
         });
     });

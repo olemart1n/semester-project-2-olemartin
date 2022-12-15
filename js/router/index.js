@@ -11,7 +11,11 @@ export const homeRouter = () => {
         renderUser();
     } else if (document.location.href.includes("home")) {
         renderProfile();
-    } else if (document.querySelector("#listingsFeed")) {
+    } else if (
+        document.querySelector("#listingsFeed") &&
+        !document.location.href.includes("login") &&
+        !document.location.href.includes("register")
+    ) {
         renderWithBids();
     }
 };

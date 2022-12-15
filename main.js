@@ -22,7 +22,10 @@ document.addEventListener("click", (e) => {
                 e.target.href.substring(e.target.href.lastIndexOf("/") + 1, e.target.href.length)
             );
         }
-        console.log(e.target);
+        authenticationRouter();
+        navRouter();
+        homeRouter();
+        filter();
     }
 });
 

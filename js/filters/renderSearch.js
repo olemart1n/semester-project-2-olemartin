@@ -21,14 +21,14 @@ export const renderTitles = (titleArray) => {
                 resultsContainer.innerHTML === ""
             ) {
                 resultsContainer.innerHTML =
-                    "<p class='font-bold text-black mx-auto'>No results. <a href='/'>Go back</a></p>";
+                    "<p class='font-bold text-black mx-auto'>No results. <a href='./'>Go back</a></p>";
             }
         }, 1500);
         titleArray.forEach((element) => {
             resultsContainer.insertAdjacentElement(
                 "beforeend",
                 itemResult(
-                    `../item?id=${element.id}`,
+                    `/semester-project-2-olemartin/item?id=${element.id}`,
                     element.media[0],
                     element.title,
                     activeOrSold(element.endsAt)
@@ -51,7 +51,7 @@ export const renderTags = (tagsArray) => {
             resultsContainer.insertAdjacentElement(
                 "beforeend",
                 itemResult(
-                    `../item?id=${element.id}`,
+                    `/semester-project-2-olemartin/item?id=${element.id}`,
                     element.media[0],
                     element.title,
                     activeOrSold(element.endsAt)

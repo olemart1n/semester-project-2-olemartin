@@ -74,7 +74,7 @@ export const userResult = (name, avatar, aTitle) => {
     const itemLink = createElement("a", {
         class: "w-full grid grid-cols-2 relative h-24 items-center border rounded border-auctionBrown my-2 place-content-center",
     });
-    itemLink.href = "../user/" + name;
+    itemLink.href = "/semester-project-2-olemartin/user/" + name;
     const itemImg = createElement("img", { class: "h-12 w-12 aspect-square object-cover mx-auto" });
     itemImg.src = avatar;
     const itemTitle = createElement("p", { class: "text-auctionGrey" });

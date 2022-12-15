@@ -85,7 +85,7 @@ aSpan.innerHTML = "OR";
 const anchorDiv = createElement("div", { class: "text-md mt-5 mx-auto" });
 const registerLink = createElement("a", {
     class: "text-almostWhite bg-auctionGrey opacity-50 p-1 ml-1 rounded-sm hover:text-indigo-500",
-    href: "./register",
+    href: "/semester-project-2-olemartin/register",
 });
 registerLink.innerHTML = "Create an accocunt";
 anchorDiv.append(registerLink);

@@ -31,7 +31,7 @@ export const renderUser = () => {
             allItemsContinaer.insertAdjacentElement(
                 "beforeend",
                 itemConainer(
-                    `../item?id=${element.id}`,
+                    `/semester-project-2-olemartin/item?id=${element.id}`,
                     element.media[0],
                     element.title,
                     activeOrSold(element.endsAt)
@@ -46,7 +46,7 @@ export const renderUser = () => {
             allBidsContainer.insertAdjacentElement(
                 "beforeend",
                 bidContainer(
-                    `../item?id=${element.listing.id}`,
+                    `/semester-project-2-olemartin/item?id=${element.listing.id}`,
                     element.listing.title,
                     activeOrSold(element.listing.endsAt)
                 )

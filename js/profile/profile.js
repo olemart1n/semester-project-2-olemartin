@@ -53,7 +53,7 @@ export const renderProfile = async () => {
                     element.media[0],
                     element.title,
                     activeOrSold(element.endsAt),
-                    `../item?id=${element.id}`,
+                    `/semester-project-2-olemartin/item?id=${element.id}`,
                     element.id
                 )
             );

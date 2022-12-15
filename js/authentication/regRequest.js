@@ -26,7 +26,7 @@ export const registerNewAccount = () => {
                         save("email", email);
                         save("avatar", avatar);
                         setTimeout(() => {
-                            window.location.replace("/feed");
+                            window.location.replace("/semester-project-2-olemartin/feed");
                         }, 2000);
                     });
                 }, 2000);

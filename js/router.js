@@ -4,6 +4,7 @@ import { renderUser } from "./user/index.js";
 import { authCheck } from "./tools/authCheck.js";
 import { authedNav } from "./authentication/authedNav.js";
 import { load } from "./storage/load.js";
+import { createElement } from "./tools/factory.js";
 
 export const router = () => {
     if (load("authed") === null) {

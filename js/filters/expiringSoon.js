@@ -7,9 +7,6 @@ import { counterContainer } from "../tools/timeCalc/countdown.js";
 import { listingsFeed, h2Header } from "../queryselectors.js";
 // parameters gets changed if user click next page
 export let finalArray = [];
-export const deleteFinalArray = () => {
-    finalArray = [];
-};
 export const expiringSoon = async (start, end) => {
     let i = start;
     listingsFeed.innerHTML = "";

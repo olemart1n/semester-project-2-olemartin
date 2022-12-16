@@ -6,6 +6,7 @@ import {
     h2Header,
     navWithBar,
     ghostButton,
+    filterSection,
 } from "../queryselectors";
 import { renderLoginPage } from "../authentication/renderLoginPage";
 import { loginRequest } from "../authentication/loginRequest.js";
@@ -18,10 +19,6 @@ import { Container } from "postcss";
 // ghostButton.innerHTML = "Profile";
 
 export const loginProfileBtn = () => {
-    if (load("ghostButton") === "activated") {
-        navLinkOne.remove();
-        navWithBar.insertAdjacentElement("afterbegin", ghostButton);
-    }
     if (load("authed") === "false" || load("authed") === null) {
         navLinkOne.addEventListener("click", () => {
             // resetFilterButtons();
@@ -36,7 +33,7 @@ export const loginProfileBtn = () => {
             profilePage();
             save("page", "profile");
             navLinkOne.remove();
-            // navWithBar.insertAdjacentElement("afterbegin", ghostButton);
+            navWithBar.insertAdjacentElement("afterbegin", ghostButton);
             ghostButton.classList.remove("hidden");
             save("ghostButton", "activated");
         });
@@ -44,9 +41,14 @@ export const loginProfileBtn = () => {
 };
 
 export const profileButton = () => {
-    // profileContainer.classList.add("hidden");
+    //     // profileContainer.classList.add("hidden");
+    //     ghostButton.addEventListener("click", () => {
+    //         profileContainer.classList.remove("hidden");
+    //         console.log("hello");
+    //     });
     ghostButton.addEventListener("click", () => {
         profileContainer.classList.remove("hidden");
-        console.log("hello");
+        listingsFeed.innerHTML = "";
+        itemContainer.innerHTML = "";
     });
 };

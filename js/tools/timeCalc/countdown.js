@@ -1,10 +1,10 @@
 import { createElement } from "../factory.js";
 import { timeGap } from "./definitions.js";
 import { hour, day, min, sec } from "./definitions.js";
-import { h1 } from "../../queryselectors.js";
 
 export const counterContainer = (element, endsAt) => {
-    const counterSection = document.querySelector(".counterBox" + element);
+    // const counterSection = document.querySelector(".counterBox" + element);
+    const counterSection = document.querySelector("fefefe");
     const hourDiv = createElement("div", { class: "time flex flex-col" });
     const minDiv = createElement("div", { class: "time flex flex-col" });
     const secDiv = createElement("div", { class: "time flex flex-col" });
@@ -26,14 +26,4 @@ export const counterContainer = (element, endsAt) => {
         minH3.innerHTML = Math.floor((timeGap(endsAt) % hour) / min);
         hourH3.innerHTML = Math.floor((timeGap(endsAt) % day) / hour);
     }, 1000);
-};
-
-export const deletecounterContainer = () => {
-    const counterSection = document.querySelectorAll(".counterDiv");
-    // const arr = [...counterSection];
-    // arr.forEach((element) => {
-    //     const childs = element.children;
-    //     console.log(childs);
-    // });
-    console.log(counterSection);
 };

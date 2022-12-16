@@ -1,7 +1,6 @@
 import { wrapper } from "./formElements";
-
-const container = document.querySelector("#itemContainer");
+import { itemContainer } from "../queryselectors";
 
 export const renderLoginPage = () => {
-    container.insertAdjacentElement("beforeend", wrapper);
+    itemContainer.insertAdjacentElement("beforeend", wrapper);
 };

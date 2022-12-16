@@ -1,9 +1,9 @@
-import { newBtn, expireSoonBtn, p, nav, nextBtn } from "./htmlElements.js";
+import { newBtn, expireSoonBtn, nav, nextBtn } from "./htmlElements.js";
 import { searchFocus } from "./searchFocus.js";
 import { newest } from "./newest.js";
 import { expiringSoon } from "./expiringSoon.js";
 import { search } from "./search.js";
-const filterSection = document.querySelector("#filters");
+import { filterSection } from "../queryselectors.js";
 
 export const filter = () => {
     filterSection.insertAdjacentElement("beforeend", nav);

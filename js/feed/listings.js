@@ -1,8 +1,7 @@
-import { apiRequest } from "../../tools/fetch.js";
+import { apiRequest } from "../tools/fetch.js";
 import { expandImg } from "./expandImg.js";
 import { feedLayout } from "./feedLayout.js";
-
-const listingsContainer = document.querySelector("#listingsFeed");
+import { listingsFeed } from "../queryselectors.js";
 
 export const renderWithBids = async (req) => {
     await apiRequest("listings?_bids=true&sort=created&sortOrder=desc").then((data) => {
@@ -14,7 +13,7 @@ export const renderWithBids = async (req) => {
             if (i === 10) {
                 break;
             }
-            listingsContainer.insertAdjacentHTML("beforeend", feedLayout(element));
+            listingsFeed.insertAdjacentHTML("beforeend", feedLayout(element));
         }
     });
     expandImg();

@@ -83,3 +83,10 @@ export const userResult = (name, avatar, aTitle) => {
     itemLink.append(itemImg, itemTitle);
     return itemLink;
 };
+
+export const resetFilterButtons = () => {
+    newBtn.classList.remove("bg-auctionBlue");
+    newBtn.classList.add("bg-logoBg");
+    expireSoonBtn.classList.remove("bg-auctionBlue");
+    expireSoonBtn.classList.add("bg-logoBg");
+};

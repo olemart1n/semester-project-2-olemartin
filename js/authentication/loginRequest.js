@@ -22,7 +22,9 @@ export const loginRequest = () => {
                 save("email", email);
                 save("avatar", avatar);
                 setTimeout(() => {
-                    window.location.replace("/feed");
+                    save("authed", "true");
+                    save("page", "index");
+                    window.location.reload();
                 }, 2000);
             } else if (data.statusCode === 401) {
                 warningAlert.classList.remove("hidden");

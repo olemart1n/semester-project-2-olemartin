@@ -6,26 +6,24 @@ import {
     itemResult,
     userResult,
 } from "./htmlElements.js";
-const resultsContainer = document.querySelector("#itemContainer");
-const header = document.querySelector("#listingHeader");
-
+import { h2Header, itemContainer } from "../queryselectors.js";
 export const renderTitles = (titleArray) => {
     byTitleButton.addEventListener("click", (e) => {
         e.currentTarget.classList.add("bg-auctionBlue");
         byTagsButton.classList.remove("bg-auctionBlue");
         byUserButton.classList.remove("bg-auctionBlue");
-        resultsContainer.innerHTML = "";
+        itemContainer.innerHTML = "";
         setTimeout(() => {
             if (
-                resultsContainer.innerHTML.includes("-translate-x-1/2") ||
-                resultsContainer.innerHTML === ""
+                itemContainer.innerHTML.includes("-translate-x-1/2") ||
+                itemContainer.innerHTML === ""
             ) {
-                resultsContainer.innerHTML =
+                itemContainer.innerHTML =
                     "<p class='font-bold text-black mx-auto'>No results. <a href='/'>Go back</a></p>";
             }
         }, 1500);
         titleArray.forEach((element) => {
-            resultsContainer.insertAdjacentElement(
+            itemContainer.insertAdjacentElement(
                 "beforeend",
                 itemResult(
                     `../item?id=${element.id}`,
@@ -37,18 +35,21 @@ export const renderTitles = (titleArray) => {
         });
     });
     byTitleButton.click();
-    header.innerHTML = "Search by title";
+    h2Header.innerHTML = "Search by title";
+    // byTitleButton.addEventListener("onfocusout", () => {
+    //     itemContainer.innerHTML = "";
+    // });
 };
 
 export const renderTags = (tagsArray) => {
     byTagsButton.addEventListener("click", (e) => {
-        header.innerHTML = "Search by tags";
+        h2Header.innerHTML = "Search by tags";
         e.currentTarget.classList.add("bg-auctionBlue");
         byTitleButton.classList.remove("bg-auctionBlue");
         byUserButton.classList.remove("bg-auctionBlue");
-        resultsContainer.innerHTML = "";
+        itemContainer.innerHTML = "";
         tagsArray.forEach((element) => {
-            resultsContainer.insertAdjacentElement(
+            itemContainer.insertAdjacentElement(
                 "beforeend",
                 itemResult(
                     `../item?id=${element.id}`,
@@ -63,13 +64,13 @@ export const renderTags = (tagsArray) => {
 
 export const renderUsers = (userArray) => {
     byUserButton.addEventListener("click", (e) => {
-        header.innerHTML = "Search by user";
+        h2Header.innerHTML = "Search by user";
         e.currentTarget.classList.add("bg-auctionBlue");
         byTitleButton.classList.remove("bg-auctionBlue");
         byTagsButton.classList.remove("bg-auctionBlue");
-        resultsContainer.innerHTML = "";
+        itemContainer.innerHTML = "";
         userArray.forEach((element) => {
-            resultsContainer.insertAdjacentElement(
+            itemContainer.insertAdjacentElement(
                 "beforeend",
                 userResult(element.name, element.avatar, element.name)
             );

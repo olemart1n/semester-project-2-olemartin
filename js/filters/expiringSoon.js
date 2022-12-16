@@ -1,17 +1,18 @@
-import { feedLayoutNr2 } from "../home/feed/feedLayoutNr2.js";
+import { feedLayoutNr2 } from "../feed/feedLayoutNr2.js";
 import { apiRequest } from "../tools/fetch.js";
-import { expandImg } from "../home/feed/expandImg.js";
+import { expandImg } from "../feed/expandImg.js";
 import { timeGap } from "../tools/timeCalc/definitions.js";
 import { closeToExp } from "../tools/timeCalc/timeLeft.js";
 import { counterContainer } from "../tools/timeCalc/countdown.js";
-const listingsContainer = document.querySelector("#listingsFeed");
-const h2Header = document.querySelector("#listingHeader");
-
+import { listingsFeed, h2Header } from "../queryselectors.js";
 // parameters gets changed if user click next page
-
+export let finalArray = [];
+export const deleteFinalArray = () => {
+    finalArray = [];
+};
 export const expiringSoon = async (start, end) => {
     let i = start;
-    listingsContainer.innerHTML = "";
+    listingsFeed.innerHTML = "";
     h2Header.innerHTML = "Expires today";
     await apiRequest("listings?_bids=true&sort=created&sortOrder=desc").then((data) => {
         const lessThanADay = data.filter((data) => {
@@ -23,7 +24,6 @@ export const expiringSoon = async (start, end) => {
         });
         const sorted = closeToExp(justTimeGaps);
 
-        const finalArray = [];
         for (let i = 0; i < sorted.length; i++) {
             const element = sorted[i];
             for (let j = 0; j < lessThanADay.length; j++) {
@@ -41,7 +41,7 @@ export const expiringSoon = async (start, end) => {
             }
             const defined = element.endsAt;
             const id = element.id;
-            listingsContainer.insertAdjacentHTML("beforeend", feedLayoutNr2(element));
+            listingsFeed.insertAdjacentHTML("beforeend", feedLayoutNr2(element));
             counterContainer(id, defined);
         }
     });

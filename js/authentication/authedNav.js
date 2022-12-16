@@ -1,11 +1,12 @@
-const linkOne = document.querySelector("#nav-link-1");
-const linkTwo = document.querySelector("#nav-link-2");
+import { navLinkOne, navLinkTwo } from "../queryselectors";
+import { save } from "../storage";
 
 export const authedNav = () => {
-    linkOne.textContent = "Profile";
-    linkOne.href = "../home/";
-    linkTwo.addEventListener("click", () => localStorage.clear());
-    linkTwo.href = "/";
-    linkTwo.textContent = "Logout";
+    navLinkOne.textContent = "Profile"; // PROFILE BUTTON
+    navLinkTwo.addEventListener("click", () => {
+        localStorage.clear();
+        document.location.reload();
+    });
+    navLinkTwo.textContent = "Logout";
     document.title = "Feed | AuctionHouse";
 };

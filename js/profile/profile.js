@@ -18,11 +18,10 @@ import {
     allBtn,
     checkActive,
 } from "./layoutElements.js";
+import { profileContainer, h2Header } from "../queryselectors.js";
 const { account } = endpoints;
 const { getWithJwt } = fetchOptions;
-const listingHeader = document.querySelector("#listingHeader");
-const userContainer = document.querySelector("#itemContainer");
-const subUserContainer = createElement("div", { class: "" });
+const subprofileContainer = createElement("div", { class: "" });
 //
 export const updateModal = createElement("div", { class: "w-full aspect-square hidden" });
 export const itemFormClone = itemForm.cloneNode(true);
@@ -30,14 +29,14 @@ export const itemFormClone = itemForm.cloneNode(true);
 export const updateModal1 = createElement("div", { class: "w-full aspect-square hidden" });
 export const renderProfile = async () => {
     document.body.append(updateModal, updateModal1);
-    userContainer.classList.add("min-h-screen");
+    profileContainer.classList.add("min-h-screen");
     document.title = `Profile | AuctionHouse`;
-    listingHeader.innerHTML = "Your details";
+    h2Header.innerHTML = "Your details";
     //
     itemFormClone.id = "updateForm";
     updateModal.append(itemFormClone);
     //
-    userContainer.append(headerSection, profileListings, subUserContainer);
+    profileContainer.append(headerSection, profileListings, subprofileContainer);
     const active = [];
     const all = [];
     await apiRequest(account, getWithJwt).then((data) => {
@@ -47,7 +46,7 @@ export const renderProfile = async () => {
         profileEmail.innerHTML = data.email;
         profileCredits.innerHTML = "Your wallet " + data.credits + "$";
         data.listings.forEach((element) => {
-            subUserContainer.insertAdjacentElement(
+            subprofileContainer.insertAdjacentElement(
                 "beforeend",
                 listingContainer(
                     element.media[0],
@@ -66,10 +65,10 @@ export const renderProfile = async () => {
     activeBtn.append("(" + active.length + ")");
     allBtn.append("(" + all.length + ")");
     activeBtn.addEventListener("click", () => {
-        refresh(subUserContainer, userContainer, active, listingContainer);
+        refresh(subprofileContainer, profileContainer, active, listingContainer);
     });
     allBtn.addEventListener("click", () => {
-        refresh(subUserContainer, userContainer, all, listingContainer);
+        refresh(subprofileContainer, profileContainer, all, listingContainer);
     });
     button.addEventListener("click", (e) => {
         itemForm.classList.toggle("hidden");

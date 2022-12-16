@@ -1,6 +1,7 @@
 import { createElement } from "../factory.js";
 import { timeGap } from "./definitions.js";
 import { hour, day, min, sec } from "./definitions.js";
+import { h1 } from "../../queryselectors.js";
 
 export const counterContainer = (element, endsAt) => {
     const counterSection = document.querySelector(".counterBox" + element);
@@ -16,18 +17,23 @@ export const counterContainer = (element, endsAt) => {
     hourText.innerHTML = "hours";
     minText.innerHTML = "minutes";
     secText.innerHTML = "seconds";
-    hourDiv.append(hourH3);
-    hourDiv.append(hourText);
-    minDiv.append(minH3);
-    minDiv.append(minText);
-    secDiv.append(secH3);
-    secDiv.append(secText);
-    counterSection.append(hourDiv);
-    counterSection.append(minDiv);
-    counterSection.append(secDiv);
+    hourDiv.append(hourH3, hourText);
+    minDiv.append(minH3, minText);
+    secDiv.append(secH3, secText);
+    counterSection.append(hourDiv, minDiv, secDiv);
     setInterval(() => {
         secH3.innerHTML = Math.floor((timeGap(endsAt) % min) / sec);
         minH3.innerHTML = Math.floor((timeGap(endsAt) % hour) / min);
         hourH3.innerHTML = Math.floor((timeGap(endsAt) % day) / hour);
     }, 1000);
+};
+
+export const deletecounterContainer = () => {
+    const counterSection = document.querySelectorAll(".counterDiv");
+    // const arr = [...counterSection];
+    // arr.forEach((element) => {
+    //     const childs = element.children;
+    //     console.log(childs);
+    // });
+    console.log(counterSection);
 };

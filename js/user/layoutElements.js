@@ -22,10 +22,9 @@ export const subHeader1 = createElement("h2", { class: "text-lg text-auctionGrey
 allItemsContinaer.append(subHeader1);
 //
 export const itemConainer = (aHref, aSrc, aTitle, anItemStatus) => {
-    const itemLink = createElement("a", {
-        class: "w-full grid grid-cols-3 relative h-24 items-center border rounded border-auctionBrown my-2 place-content-center",
+    const itemLink = createElement("button", {
+        class: `w-full grid grid-cols-3 relative h-24 items-center border rounded border-auctionBrown my-2 place-content-center itemm${aHref}`,
     });
-    itemLink.href = aHref;
     const itemImg = createElement("img", { class: "h-12 w-12 aspect-square object-cover mx-auto" });
     itemImg.src = aSrc;
     const itemTitle = createElement("p", { class: "text-auctionGrey" });

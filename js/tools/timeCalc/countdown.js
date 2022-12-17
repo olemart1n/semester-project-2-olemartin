@@ -3,8 +3,7 @@ import { timeGap } from "./definitions.js";
 import { hour, day, min, sec } from "./definitions.js";
 
 export const counterContainer = (element, endsAt) => {
-    // const counterSection = document.querySelector(".counterBox" + element);
-    const counterSection = document.querySelector("fefefe");
+    const counterSection = document.querySelector(".counterBox" + element);
     const hourDiv = createElement("div", { class: "time flex flex-col" });
     const minDiv = createElement("div", { class: "time flex flex-col" });
     const secDiv = createElement("div", { class: "time flex flex-col" });
@@ -21,9 +20,13 @@ export const counterContainer = (element, endsAt) => {
     minDiv.append(minH3, minText);
     secDiv.append(secH3, secText);
     counterSection.append(hourDiv, minDiv, secDiv);
+    // counterSection.append(minDiv);
+    // counterSection.append(secDiv);
     setInterval(() => {
         secH3.innerHTML = Math.floor((timeGap(endsAt) % min) / sec);
         minH3.innerHTML = Math.floor((timeGap(endsAt) % hour) / min);
         hourH3.innerHTML = Math.floor((timeGap(endsAt) % day) / hour);
     }, 1000);
+
+    return counterSection;
 };

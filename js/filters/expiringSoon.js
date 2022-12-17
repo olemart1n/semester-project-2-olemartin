@@ -4,12 +4,13 @@ import { expandImg } from "../feed/expandImg.js";
 import { timeGap } from "../tools/timeCalc/definitions.js";
 import { closeToExp } from "../tools/timeCalc/timeLeft.js";
 import { counterContainer } from "../tools/timeCalc/countdown.js";
-import { listingsFeed, h2Header } from "../queryselectors.js";
-// parameters gets changed if user click next page
-export let finalArray = [];
+import { expireSoonFeed, h2Header } from "../queryselectors.js";
+import { getToItem } from "../item/getToItem.js";
+
 export const expiringSoon = async (start, end) => {
+    let finalArray = [];
     let i = start;
-    listingsFeed.innerHTML = "";
+    expireSoonFeed.innerHTML = "";
     h2Header.innerHTML = "Expires today";
     await apiRequest("listings?_bids=true&sort=created&sortOrder=desc").then((data) => {
         const lessThanADay = data.filter((data) => {
@@ -38,8 +39,9 @@ export const expiringSoon = async (start, end) => {
             }
             const defined = element.endsAt;
             const id = element.id;
-            listingsFeed.insertAdjacentHTML("beforeend", feedLayoutNr2(element));
+            expireSoonFeed.insertAdjacentHTML("beforeend", feedLayoutNr2(element));
             counterContainer(id, defined);
+            getToItem(id);
         }
     });
     expandImg();

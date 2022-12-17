@@ -4,8 +4,8 @@ import { authCheck } from "../tools/authCheck.js";
 import { fetchOptions } from "../endpoints.js";
 import { renderTitles, renderTags, renderUsers } from "./renderSearch.js";
 import { byUserButton } from "./htmlElements.js";
+import { searchForm } from "../queryselectors.js";
 const { getWithJwt } = fetchOptions;
-const searchForm = document.querySelector("#searchForm");
 export const search = () => {
     searchForm.addEventListener(
         "input",

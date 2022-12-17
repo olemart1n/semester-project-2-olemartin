@@ -13,15 +13,16 @@ import {
     bidContainer,
 } from "./layoutElements.js";
 import { backArrow } from "../tools/UI/backArrow.js";
-import { endOfQuery } from "../tools/query/endOfQuery.js";
-
-const userContainer = document.querySelector("#itemContainer");
-const h2Header = document.querySelector("#listingHeader");
+import { getToItem } from "./getToItemm.js";
+import { h2Header, userContainer } from "../queryselectors.js";
 const { getWithJwt } = fetchOptions;
-export const renderUser = () => {
+
+// FÅ ID FRA BUTTON
+
+export const renderUser = (namex) => {
     backArrow(h2Header);
-    const listingsFetch = `profiles/${endOfQuery()}?_listings=true `;
-    const bidsFetch = `profiles/${endOfQuery()}/bids?_listings=true`;
+    const listingsFetch = `profiles/${namex}?_listings=true `;
+    const bidsFetch = `profiles/${namex}/bids?_listings=true`;
     userContainer.append(headerSection, allItemsContinaer, allBidsContainer);
     apiRequest(listingsFetch, getWithJwt).then((data) => {
         userAvatar.src = data.avatar;
@@ -31,12 +32,13 @@ export const renderUser = () => {
             allItemsContinaer.insertAdjacentElement(
                 "beforeend",
                 itemConainer(
-                    `../item?id=${element.id}`,
+                    element.id,
                     element.media[0],
                     element.title,
                     activeOrSold(element.endsAt)
                 )
             );
+            getToItem(element.id);
         });
     });
     apiRequest(bidsFetch, getWithJwt).then((data) => {
@@ -54,5 +56,3 @@ export const renderUser = () => {
         });
     });
 };
-
-//flex flex-col md:w-5/6 w-full m-auto p-3

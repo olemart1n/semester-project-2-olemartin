@@ -23,20 +23,12 @@ import {
     allBidsBtn,
     allBids,
 } from "./layOutElements.js";
-const itemContainer = document.querySelector("#itemContainer");
-const listingFeed = document.querySelector("#listingsFeed");
-const mainTag = document.querySelector("main");
-const filters = document.querySelector("#filters");
-const h2Header = document.querySelector("#listingHeader");
+import { h2Header, itemContainer, userContainer } from "../queryselectors.js";
+import { getToUser } from "../user/getToUser.js";
 
-export const renderItem = () => {
-    listingFeed.innerHTML = "";
+export const renderItem = (id) => {
     h2Header.innerHTML = "";
-    filters.remove();
     document.title = `Item | AuctionHouse`;
-    mainTag.classList.remove("bg-auctionBg");
-    const queryString = document.location.search;
-    const id = new URLSearchParams(queryString).get("id");
     const spesificItem = `listings/${id}?_seller=true&_bids=true`;
     backArrow(h2Header);
 
@@ -53,9 +45,9 @@ export const renderItem = () => {
         const endsAt = data.endsAt;
         title.innerHTML = data.title;
         if (authCheck()) {
-            seller.innerHTML = `<a href="../user/${data.seller.name}"><span class="text-auctionGrey">seller: </span class="font-bold text-lg">${data.seller.name}</a>`;
+            seller.innerHTML = `<button class="border border-black px-2 rounded-none user${data.seller.name}" id"../user/${data.seller.name}"><span class="text-auctionGrey">seller: </span class="font-bold text-lg">${data.seller.name}</button>`;
         } else {
-            seller.innerHTML = `<a href="#">${data.seller.name} <span class="text-auctionGrey">(log in to visit ) </span></a>`;
+            seller.innerHTML = `<button disabled="disabled">${data.seller.name} <span class="text-auctionGrey">(log in to visit ) </span></button>`;
         }
 
         const currentTimeGap = timeGap(data.endsAt);
@@ -94,5 +86,6 @@ export const renderItem = () => {
         }
         console.log(data);
         viewBids(allBidsBtn, allBids, data.bids);
+        getToUser(data.seller.name, data.seller.name);
     });
 };

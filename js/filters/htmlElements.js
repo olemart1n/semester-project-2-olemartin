@@ -15,12 +15,14 @@ export const nav = createElement("nav", { class: "" });
 export const div1 = createElement("div", { class: "flex self-center" });
 export const p = createElement("p", { class: "text-logoBg m-auto" });
 p.innerHTML = "sort by";
-export const div2 = createElement("div", { class: "flex flex-col md:flex-row md:pb-0 pb-0 gap-2" });
+export const twoButtonsDiv = createElement("div", {
+    class: "flex flex-col md:flex-row md:pb-0 pb-0 gap-2",
+});
 div1.append(p);
-div2.append(expireSoonBtn);
-div2.append(newBtn);
+twoButtonsDiv.append(expireSoonBtn);
+twoButtonsDiv.append(newBtn);
 nav.append(div1);
-nav.append(div2);
+nav.append(twoButtonsDiv);
 
 export const nextBtn = createElement("button", {
     class: "px-5 border border-1 text-logoBg py-2 mx-auto block",

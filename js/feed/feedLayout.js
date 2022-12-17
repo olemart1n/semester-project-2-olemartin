@@ -15,9 +15,11 @@ export const feedLayout = (element) => {
          <div class="flex flex-col m-0 p-0">
          ${hourLeft(element.endsAt, element.bids)}
          </div>
-       <a href="item?id=${
+       <button id=${
            element.id
-       }" class="bg-auctionGrey p-1 mb-5 rounded-sm text-almostWhite">view item</a>
+       }" class="bg-auctionGrey p-1 mb-5 rounded-sm text-almostWhite font-bold item${
+        element.id
+    }">view item</button>
     </div>
   </div>
     `;
